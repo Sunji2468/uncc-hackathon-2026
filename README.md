@@ -50,12 +50,16 @@ npm run test:e2e         # Playwright: full flow on phone and desktop, plus an a
 
 `test:e2e` runs against `http://localhost:3000`. To test another server, for example the deployed one: `E2E_BASE_URL=https://your-app.vercel.app npm run test:e2e`. Run it with `DEMO_MODE=true` to avoid AI costs.
 
-## Deploy (Vercel and Neon)
+## Deploy (Vercel with Supabase or Neon)
 
-1. Create a Neon project and copy its **direct** (non-pooled) connection string. Prisma migrations need a direct connection.
-2. Import the repo in Vercel and set the environment variables above, with `DATABASE_URL` set to the Neon string.
-3. Deploy. The `vercel-build` script runs `prisma migrate deploy` and then `next build`.
-4. Optional: seed the Fridge once with `DATABASE_URL=<neon url> npm run db:seed`.
+1. **Database.** Use one of these:
+   - **Supabase:** go to Connect, then **Session pooler**, and copy the string (`...pooler.supabase.com:5432/postgres`). Don't use the direct `db.<ref>.supabase.co` host: on the free plan it is IPv6-only, and Vercel uses IPv4. Don't use the transaction pooler on port 6543 either: Prisma migrations need session mode.
+   - **Neon:** copy the **direct** (non-pooled) connection string.
+2. **Vercel.** Choose Add New, then Project, and import this GitHub repo. Next.js is detected automatically.
+3. **Environment variables** in Vercel: `DATABASE_URL`, `OPENAI_API_KEY`, `OPENAI_MODEL`, `USDA_API_KEY`, `AI_DAILY_LIMIT`, `DEMO_MODE=false` and `APP_SECRET` (a fresh `openssl rand -hex 32`).
+4. **Deploy.** The `vercel-build` script runs `prisma migrate deploy` and then `next build`.
+5. **Seed** the Fridge once from your machine: `DATABASE_URL=<same url> npm run db:seed`.
+6. **Verify:** `E2E_BASE_URL=https://<your-app>.vercel.app npm run test:e2e`. This calls the AI unless the deployment has `DEMO_MODE=true`.
 
 ## How it is built
 
