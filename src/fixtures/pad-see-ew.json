@@ -1,0 +1,29 @@
+{
+  "is_food": true,
+  "dish_name": "Pad See Ew",
+  "menu_price_cents": 1700,
+  "thumbnail_colors": ["#9FE3C4", "#7A4A22"],
+  "confidence": 0.75,
+  "assumptions": "Assumed chicken as the protein and about 1 tbsp of oil for the wok. Wide fresh noodles weighed as dry.",
+  "total_minutes": 25,
+  "ingredients": [
+    { "name": "Wide rice noodles", "grams_per_serving": 90, "category": "rice_grain", "usda_query": "rice noodles dry", "kcal_per_100g_estimate": 364, "protein_per_100g_estimate": 6 },
+    { "name": "Chicken breast", "grams_per_serving": 120, "category": "chicken", "usda_query": "chicken broilers or fryers breast meat only raw", "kcal_per_100g_estimate": 120, "protein_per_100g_estimate": 22.5 },
+    { "name": "Chinese broccoli", "grams_per_serving": 100, "category": "vegetable", "usda_query": "broccoli chinese raw", "kcal_per_100g_estimate": 22, "protein_per_100g_estimate": 1.1 },
+    { "name": "Egg", "grams_per_serving": 50, "category": "eggs", "usda_query": "egg whole raw fresh", "kcal_per_100g_estimate": 143, "protein_per_100g_estimate": 12.6 },
+    { "name": "Dark soy sauce", "grams_per_serving": 15, "category": "sauce", "usda_query": "soy sauce made from soy tamari", "kcal_per_100g_estimate": 60, "protein_per_100g_estimate": 10 },
+    { "name": "Oyster sauce", "grams_per_serving": 15, "category": "sauce", "usda_query": "sauce oyster ready-to-serve", "kcal_per_100g_estimate": 51, "protein_per_100g_estimate": 1.4 },
+    { "name": "Garlic", "grams_per_serving": 6, "category": "vegetable", "usda_query": "garlic raw", "kcal_per_100g_estimate": 149, "protein_per_100g_estimate": 6.4 },
+    { "name": "Sugar", "grams_per_serving": 6, "category": "sugar", "usda_query": "sugars granulated", "kcal_per_100g_estimate": 387, "protein_per_100g_estimate": 0 },
+    { "name": "Vegetable oil", "grams_per_serving": 15, "category": "butter_oil", "usda_query": "oil canola", "kcal_per_100g_estimate": 884, "protein_per_100g_estimate": 0 }
+  ],
+  "steps": [
+    "Soak the noodles in warm water until pliable, then drain.",
+    "Slice the chicken thin and cut the broccoli into stems and leaves.",
+    "Stir-fry the garlic and chicken in hot oil until cooked.",
+    "Add the broccoli stems and cook for 1 minute.",
+    "Push aside, scramble the egg, then add the noodles.",
+    "Add the soy sauce, oyster sauce and sugar and toss to char.",
+    "Fold in the broccoli leaves and serve hot."
+  ]
+}

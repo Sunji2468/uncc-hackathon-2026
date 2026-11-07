@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Ingredients and swaps</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#12201B;font-family:'DM Sans',system-ui,sans-serif;color:#F4EFE6}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #FFD54A;outline-offset:3px}
+</style>
+</helmet>
+
+<div style="position:relative;width:390px;height:844px;overflow:hidden;background:#12201B">
+
+<div style="position:absolute;left:0;right:0;top:0;padding:20px 16px 0;display:flex;align-items:center;gap:12px">
+<a href="Sticker.dc.html" aria-label="Back to the sticker" style="width:48px;height:48px;border-radius:50%;background:#1B2D26;border:2px solid #2E4439;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></a>
+<div style="flex:1">
+<h1 style="font-size:28px;font-weight:800;letter-spacing:-0.8px;line-height:1">Ingredients</h1>
+<p style="font-size:14px;color:#B8C5BD;margin-top:4px">Cacio e Pepe, serves 2</p>
+</div>
+</div>
+
+<p style="position:absolute;left:20px;right:20px;top:86px;font-size:14px;line-height:1.4;color:#B8C5BD">Correct an amount or swap an ingredient. Macros and cost update right away.</p>
+
+<ul style="list-style:none;margin:0;padding:0;position:absolute;left:16px;right:16px;top:132px;display:flex;flex-direction:column;gap:8px">
+
+<li style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 16px;min-height:56px;box-sizing:border-box;border-radius:18px;background:#1B2D26;border:2px solid #2E4439">
+<div><p style="font-weight:700;font-size:16px">Spaghetti</p><p style="font-size:13px;color:#B8C5BD">$1.80</p></div>
+<div style="display:flex;align-items:center;gap:8px"><span style="font-weight:700;font-size:16px">200 g</span><button aria-label="Edit the spaghetti amount" style="width:44px;height:44px;border-radius:12px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1L19.5 7.5a2.1 2.1 0 0 0-3-3L5 16z"></path></svg></button></div>
+</li>
+
+<li style="padding:8px 8px 14px 16px;box-sizing:border-box;border-radius:18px;background:#1B2D26;border:2px solid #FFD54A">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px">
+<div><p style="font-weight:700;font-size:16px">Pecorino Romano</p><p style="font-size:13px;color:#B8C5BD">$5.00</p></div>
+<div style="display:flex;align-items:center;gap:6px">
+<button aria-label="Decrease the pecorino amount" style="width:44px;height:44px;border-radius:12px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:20px">-</button>
+<span style="font-weight:700;font-size:16px;min-width:48px;text-align:center">80 g</span>
+<button aria-label="Increase the pecorino amount" style="width:44px;height:44px;border-radius:12px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:20px">+</button>
+</div>
+</div>
+<p style="font-size:13px;font-weight:700;color:#FFD54A;margin-top:8px">Swap for</p>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;padding-right:8px">
+<button style="min-height:56px;padding:6px 14px;border-radius:14px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;text-align:left"><span style="display:block;font-weight:700;font-size:15px">Parmesan</span><span style="display:block;font-size:13px;color:#B8C5BD">$0.60 cheaper, 15 kcal less</span></button>
+<button style="min-height:56px;padding:6px 14px;border-radius:14px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;text-align:left"><span style="display:block;font-weight:700;font-size:15px">Grana Padano</span><span style="display:block;font-size:13px;color:#B8C5BD">$0.35 cheaper, same protein</span></button>
+<button style="min-height:56px;padding:6px 14px;border-radius:14px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;text-align:left"><span style="display:block;font-weight:700;font-size:15px">Nutritional yeast</span><span style="display:block;font-size:13px;color:#B8C5BD">Dairy-free, $3.40 cheaper</span></button>
+</div>
+</li>
+
+<li style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 16px;min-height:56px;box-sizing:border-box;border-radius:18px;background:#1B2D26;border:2px solid #2E4439">
+<div><p style="font-weight:700;font-size:16px">Black pepper, cracked</p><p style="font-size:13px;color:#B8C5BD">$0.40</p></div>
+<div style="display:flex;align-items:center;gap:8px"><span style="font-weight:700;font-size:16px">1 tsp</span><button aria-label="Edit the pepper amount" style="width:44px;height:44px;border-radius:12px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1L19.5 7.5a2.1 2.1 0 0 0-3-3L5 16z"></path></svg></button></div>
+</li>
+
+<li style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 16px;min-height:56px;box-sizing:border-box;border-radius:18px;background:#1B2D26;border:2px solid #2E4439">
+<div><p style="font-weight:700;font-size:16px">Butter</p><p style="font-size:13px;color:#B8C5BD">$0.60</p></div>
+<div style="display:flex;align-items:center;gap:8px"><span style="font-weight:700;font-size:16px">20 g</span><button aria-label="Edit the butter amount" style="width:44px;height:44px;border-radius:12px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1L19.5 7.5a2.1 2.1 0 0 0-3-3L5 16z"></path></svg></button></div>
+</li>
+
+<li style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 8px 8px 16px;min-height:56px;box-sizing:border-box;border-radius:18px;background:#1B2D26;border:2px solid #2E4439">
+<div><p style="font-weight:700;font-size:16px">Starchy pasta water</p><p style="font-size:13px;color:#B8C5BD">Free</p></div>
+<div style="display:flex;align-items:center;gap:8px"><span style="font-weight:700;font-size:16px">120 ml</span><button aria-label="Edit the pasta water amount" style="width:44px;height:44px;border-radius:12px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1L19.5 7.5a2.1 2.1 0 0 0-3-3L5 16z"></path></svg></button></div>
+</li>
+
+</ul>
+
+<div style="position:absolute;left:0;right:0;bottom:0;box-sizing:border-box;padding:14px 16px 24px;background:#1B2D26;border-top:2px solid #2E4439">
+<div style="display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:#B8C5BD"><span>Home cost, estimated</span><span>Total 1,280 kcal</span></div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:8px">
+<p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;line-height:1">$7.80</p>
+<a href="Cook.dc.html" style="flex:1;min-height:56px;border-radius:18px;background:#FF5A36;color:#12201B;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px">Start cooking</a>
+</div>
+</div>
+
+</div>
+</x-dc>
+</body></html>

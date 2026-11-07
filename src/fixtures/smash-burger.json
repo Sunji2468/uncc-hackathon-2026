@@ -1,0 +1,30 @@
+{
+  "is_food": true,
+  "dish_name": "Smash Burger",
+  "menu_price_cents": 1800,
+  "thumbnail_colors": ["#FFB199", "#8A4B2A"],
+  "confidence": 0.85,
+  "assumptions": "Assumed a double patty (150 g raw 80/20 beef), one slice of cheese and a standard bun. Fries not included.",
+  "total_minutes": 25,
+  "ingredients": [
+    { "name": "Ground beef 80/20", "grams_per_serving": 150, "category": "beef", "usda_query": "beef ground 80% lean meat 20% fat raw", "kcal_per_100g_estimate": 254, "protein_per_100g_estimate": 17 },
+    { "name": "Burger bun", "grams_per_serving": 55, "category": "bread", "usda_query": "rolls hamburger or hotdog plain", "kcal_per_100g_estimate": 279, "protein_per_100g_estimate": 9.5 },
+    { "name": "American cheese", "grams_per_serving": 21, "category": "cheese", "usda_query": "cheese pasteurized process american", "kcal_per_100g_estimate": 371, "protein_per_100g_estimate": 18 },
+    { "name": "Onion", "grams_per_serving": 30, "category": "vegetable", "usda_query": "onions raw", "kcal_per_100g_estimate": 40, "protein_per_100g_estimate": 1.1 },
+    { "name": "Dill pickles", "grams_per_serving": 20, "category": "vegetable", "usda_query": "pickles cucumber dill", "kcal_per_100g_estimate": 12, "protein_per_100g_estimate": 0.5 },
+    { "name": "Iceberg lettuce", "grams_per_serving": 15, "category": "vegetable", "usda_query": "lettuce iceberg raw", "kcal_per_100g_estimate": 14, "protein_per_100g_estimate": 0.9 },
+    { "name": "Ketchup", "grams_per_serving": 15, "category": "sauce", "usda_query": "catsup", "kcal_per_100g_estimate": 101, "protein_per_100g_estimate": 1 },
+    { "name": "Yellow mustard", "grams_per_serving": 5, "category": "sauce", "usda_query": "mustard prepared yellow", "kcal_per_100g_estimate": 60, "protein_per_100g_estimate": 4 },
+    { "name": "Canola oil", "grams_per_serving": 5, "category": "butter_oil", "usda_query": "oil canola", "kcal_per_100g_estimate": 884, "protein_per_100g_estimate": 0 },
+    { "name": "Salt", "grams_per_serving": 1, "category": "spice", "usda_query": "salt table", "kcal_per_100g_estimate": 0, "protein_per_100g_estimate": 0 }
+  ],
+  "steps": [
+    "Divide the beef into two loose balls and chill.",
+    "Toast the cut sides of the bun in a hot pan.",
+    "Heat a cast iron pan until smoking with a little oil.",
+    "Smash each ball flat with a spatula and season with salt.",
+    "Flip after 2 minutes and top one patty with cheese.",
+    "Stack the patties on the bun with onion, pickles and lettuce.",
+    "Add ketchup and mustard and serve."
+  ]
+}

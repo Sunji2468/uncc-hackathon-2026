@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #12201b;
+  --color-sidebar: #0f1b17;
+  --color-panel: #1b2d26;
+  --color-line: #2e4439;
+  --color-ink: #f4efe6;
+  --color-muted: #b8c5bd;
+  --color-coral: #ff5a36;
+  --color-butter: #ffd54a;
+  --color-face: #fffdf7;
+  --color-sticker-ink: #1a1a17;
+  --color-sticker-muted: #5b5850;
+  --color-chip: #f1eadb;
+  --color-sticker-border: #ffffff;
+
+  --font-display: var(--font-bricolage), "DM Sans", system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+
+  --radius-sticker: 26px;
+  --radius-panel: 28px;
+}
+
+@layer base {
+  html {
+    background: var(--color-bg);
+    color-scheme: dark;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 800;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--color-butter);
+    outline-offset: 3px;
+  }
+  input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    accent-color: var(--color-butter);
+  }
+}
+
+@utility dotted-board {
+  background-color: var(--color-panel);
+  background-image: radial-gradient(var(--color-line) 1.6px, transparent 1.6px);
+  background-size: 26px 26px;
+}
+
+/* Sticker flip: CSS 3D rotateY with hidden backfaces. */
+@layer components {
+  .flip {
+    perspective: 1400px;
+  }
+  .flip-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .flip-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .flip-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .flip-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flip-inner {
+      transition: none;
+    }
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(-1deg) translateY(-4px); }
+}
+.animate-wiggle {
+  animation: wiggle 1.6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-wiggle {
+    animation: none;
+    transform: rotate(-3deg);
+  }
+}

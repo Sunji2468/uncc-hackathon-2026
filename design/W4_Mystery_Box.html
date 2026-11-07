@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Mystery Box</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#12201B;font-family:'DM Sans',system-ui,sans-serif;color:#F4EFE6}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #FFD54A;outline-offset:3px}
+</style>
+</helmet>
+
+<div style="width:100%;min-height:1250px;background:#12201B;display:flex;flex-wrap:wrap;align-items:stretch">
+
+<aside style="flex:1 1 240px;box-sizing:border-box;padding:24px 20px;background:#0F1B17;border-right:2px solid #2E4439;display:flex;flex-direction:column;gap:24px">
+<a href="Home.dc.html" style="display:flex;align-items:center;gap:12px">
+<div style="width:40px;height:40px;border-radius:12px;background:#FF5A36;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg></div>
+<span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.5px">TasteHeist</span>
+</a>
+<a href="New.dc.html" style="min-height:52px;border-radius:16px;background:#FF5A36;color:#12201B;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:16px"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>New sticker</a>
+<nav style="display:flex;flex-direction:column;gap:4px">
+<a href="Home.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;color:#B8C5BD;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>Board</a>
+<a href="MysteryWeb.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;background:#1B2D26;color:#FFD54A;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7z"></path><path d="M3.5 7 12 11.5 20.5 7"></path><path d="M12 11.5v10"></path></svg>Mystery Box</a>
+<a href="MacrosWeb.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;color:#B8C5BD;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>Macro budget</a>
+<a href="FridgeWeb.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;color:#B8C5BD;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.4c2 .8 3.5 2.6 3.5 5.6"></path></svg>Community Fridge</a>
+<a href="Settings.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;color:#B8C5BD;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"></path><circle cx="16" cy="7" r="2"></circle><circle cx="8" cy="17" r="2"></circle></svg>Goals and diet</a>
+</nav>
+<p style="margin-top:auto;font-size:13px;line-height:1.4;color:#B8C5BD">Sample data. Nutrition and costs are estimates.</p>
+</aside>
+
+<main style="flex:999 1 560px;min-width:0;box-sizing:border-box;padding:32px 40px 64px">
+
+<h1 style="font-size:48px;font-weight:800;letter-spacing:-1.5px;line-height:1">Mystery Box</h1>
+<p style="font-size:16px;color:#B8C5BD;margin-top:8px;max-width:640px">Photograph your counter, set the clock, and open the box. The recipe uses only what you have, plus oil, salt, pepper and water.</p>
+
+<div style="display:flex;flex-wrap:wrap;gap:28px;margin-top:32px;align-items:flex-start">
+
+<div style="flex:1 1 520px;min-width:0;box-sizing:border-box;border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:24px">
+
+<div style="border-radius:22px;overflow:hidden;border:2px solid #2E4439">
+<svg sc-camel-view-box="0 0 354 174" style="display:block;width:100%;height:auto" role="img" aria-label="Counter photo with four detected ingredients: eggs, cooked rice, scallions and tomatoes">
+<rect width="354" height="174" fill="#243A31"></rect>
+<rect y="124" width="354" height="50" fill="#2E4439"></rect>
+<ellipse cx="52" cy="104" rx="14" ry="18" fill="#F4EFE6"></ellipse>
+<ellipse cx="80" cy="110" rx="14" ry="18" fill="#EBE3D2"></ellipse>
+<ellipse cx="64" cy="124" rx="14" ry="10" fill="#F4EFE6"></ellipse>
+<path d="M130 112a38 38 0 0 1 76 0z" fill="#F4EFE6"></path>
+<ellipse cx="168" cy="112" rx="38" ry="8" fill="#FFFDF7"></ellipse>
+<path d="M236 70l6 62M248 66l2 66M260 72l-4 60" stroke="#9FE3C4" stroke-width="8" stroke-linecap="round"></path>
+<circle cx="298" cy="108" r="22" fill="#FF5A36"></circle>
+<circle cx="326" cy="118" r="18" fill="#E8451F"></circle>
+<rect x="28" y="72" width="76" height="62" rx="8" fill="none" stroke="#FFD54A" stroke-width="3"></rect>
+<rect x="124" y="64" width="88" height="62" rx="8" fill="none" stroke="#FFD54A" stroke-width="3"></rect>
+<rect x="226" y="60" width="46" height="76" rx="8" fill="none" stroke="#FFD54A" stroke-width="3"></rect>
+<rect x="274" y="82" width="76" height="60" rx="8" fill="none" stroke="#FFD54A" stroke-width="3"></rect>
+<rect x="28" y="52" width="48" height="20" rx="6" fill="#FFD54A"></rect><text x="36" y="67" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#12201B">Eggs</text>
+<rect x="124" y="44" width="84" height="20" rx="6" fill="#FFD54A"></rect><text x="132" y="59" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#12201B">Cooked rice</text>
+<rect x="226" y="40" width="68" height="20" rx="6" fill="#FFD54A"></rect><text x="234" y="55" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#12201B">Scallions</text>
+<rect x="274" y="62" width="72" height="20" rx="6" fill="#FFD54A"></rect><text x="282" y="77" font-family="DM Sans, sans-serif" font-size="12" font-weight="700" fill="#12201B">Tomatoes</text>
+</svg>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">
+<button style="min-height:48px;padding:0 22px;border-radius:14px;border:0;background:#FF5A36;color:#12201B;font-weight:700;font-size:15px">Take a new photo</button>
+<button style="min-height:48px;padding:0 22px;border-radius:14px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:15px">Upload a file</button>
+</div>
+
+<p style="font-weight:700;font-size:17px;margin-top:24px">Found 4 ingredients</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+<button aria-label="Remove eggs" style="min-height:44px;padding:0 14px;display:flex;align-items:center;gap:8px;border-radius:999px;border:0;background:#F4EFE6;color:#12201B;font-weight:700;font-size:15px">Eggs<svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<button aria-label="Remove cooked rice" style="min-height:44px;padding:0 14px;display:flex;align-items:center;gap:8px;border-radius:999px;border:0;background:#F4EFE6;color:#12201B;font-weight:700;font-size:15px">Cooked rice<svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<button aria-label="Remove scallions" style="min-height:44px;padding:0 14px;display:flex;align-items:center;gap:8px;border-radius:999px;border:0;background:#F4EFE6;color:#12201B;font-weight:700;font-size:15px">Scallions<svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<button aria-label="Remove tomatoes" style="min-height:44px;padding:0 14px;display:flex;align-items:center;gap:8px;border-radius:999px;border:0;background:#F4EFE6;color:#12201B;font-weight:700;font-size:15px">Tomatoes<svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<button style="min-height:44px;padding:0 14px;display:flex;align-items:center;gap:6px;border-radius:999px;border:2px dashed #B8C5BD;background:transparent;color:#F4EFE6;font-weight:700;font-size:15px"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Add</button>
+</div>
+
+<div style="margin-top:24px;border-radius:22px;background:#12201B;border:2px solid #2E4439;padding:18px 20px">
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px"><p style="font-weight:700;font-size:17px">Time-crunch dial</p><p style="padding:5px 12px;border-radius:999px;background:#1B2D26;font-size:13px;font-weight:700;color:#FFD54A">Diet: nut-free</p></div>
+<div style="position:relative;width:200px;height:112px;margin:16px auto 0">
+<div style="position:absolute;left:0;top:0;width:200px;height:102px;box-sizing:border-box;border:5px solid #F4EFE6;border-bottom:0;border-radius:200px 200px 0 0"></div>
+<span style="position:absolute;left:16px;top:58px;font-size:13px;font-weight:700">15</span>
+<span style="position:absolute;left:88px;top:12px;font-size:13px;font-weight:700">30</span>
+<span style="position:absolute;right:14px;top:58px;font-size:13px;font-weight:700">60</span>
+<div style="position:absolute;left:98px;top:24px;width:4px;height:74px;border-radius:4px;background:#FF5A36;transform-origin:50% 100%;transform:rotate(-62deg)"></div>
+<div style="position:absolute;left:91px;top:90px;width:18px;height:18px;border-radius:50%;background:#F4EFE6"></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px">
+<button aria-pressed="true" style="min-height:48px;min-width:96px;border-radius:999px;border:2px solid #FF5A36;background:#FF5A36;color:#12201B;font-weight:700;font-size:16px">15 min</button>
+<button aria-pressed="false" style="min-height:48px;min-width:96px;border-radius:999px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:16px">30 min</button>
+<button aria-pressed="false" style="min-height:48px;min-width:96px;border-radius:999px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:16px">1 hr</button>
+</div>
+</div>
+
+</div>
+
+<div style="flex:1 1 440px;min-width:0;box-sizing:border-box;border:8px solid #FFFFFF;border-radius:34px;background:#FFFDF7;color:#1A1A17;box-shadow:0 0 0 10px rgba(255,213,74,0.22),0 20px 44px rgba(0,0,0,0.45);padding:26px 26px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<p style="padding:6px 14px;border-radius:999px;background:#FFD54A;font-weight:700;font-size:15px">15 min</p>
+<p style="padding:6px 14px;border-radius:999px;background:#F1EADB;font-weight:700;font-size:15px">About 520 kcal</p>
+<p style="padding:6px 14px;border-radius:999px;background:#F1EADB;font-weight:700;font-size:15px">18 g protein</p>
+</div>
+<h2 style="font-size:42px;font-weight:800;letter-spacing:-1.3px;line-height:1.05;margin-top:16px">Tomato-egg fried rice</h2>
+<p style="font-size:16px;line-height:1.5;color:#5B5850;margin-top:8px">Uses all 4 ingredients you photographed. Turn the dial and this recipe rewrites itself.</p>
+<ol style="margin:20px 0 0;padding:18px 0 0;list-style:none;display:flex;flex-direction:column;gap:14px;border-top:2px solid #F1EADB">
+<li style="display:flex;gap:14px;font-size:17px;line-height:1.45"><span style="flex:none;width:34px;height:34px;border-radius:50%;background:#1A1A17;color:#FFFDF7;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px">1</span><span>Scramble the eggs soft in hot oil and push them aside.</span></li>
+<li style="display:flex;gap:14px;font-size:17px;line-height:1.45"><span style="flex:none;width:34px;height:34px;border-radius:50%;background:#1A1A17;color:#FFFDF7;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px">2</span><span>Fry the rice and chopped tomato until the grains crackle.</span></li>
+<li style="display:flex;gap:14px;font-size:17px;line-height:1.45"><span style="flex:none;width:34px;height:34px;border-radius:50%;background:#1A1A17;color:#FFFDF7;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px">3</span><span>Fold the eggs back in and finish with sliced scallions.</span></li>
+</ol>
+<div style="margin-top:20px;padding:14px 16px;border-radius:18px;border:2px solid #F1EADB">
+<p style="font-weight:700;font-size:15px">Out of scallions? Swap in</p>
+<div style="display:flex;gap:8px;margin-top:10px"><button style="min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #1A1A17;background:transparent;color:#1A1A17;font-weight:700;font-size:15px">Chives</button><button style="min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #1A1A17;background:transparent;color:#1A1A17;font-weight:700;font-size:15px">Red onion</button></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:22px">
+<a href="CookWeb.dc.html" style="flex:1 1 160px;min-height:56px;border-radius:16px;background:#FF5A36;color:#12201B;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px">Start cooking</a>
+<a href="MacrosWeb.dc.html" style="flex:1 1 160px;min-height:56px;border-radius:16px;background:#1A1A17;color:#FFFDF7;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px">Add to my day</a>
+<button style="flex:1 1 140px;min-height:56px;border-radius:16px;border:2px solid #1A1A17;background:transparent;color:#1A1A17;font-weight:700;font-size:17px">Save to board</button>
+</div>
+</div>
+
+</div>
+
+</main>
+</div>
+</x-dc>
+</body></html>

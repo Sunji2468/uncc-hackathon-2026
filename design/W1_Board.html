@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>TasteHeist board</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#12201B;font-family:'DM Sans',system-ui,sans-serif;color:#F4EFE6}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #FFD54A;outline-offset:3px}
+</style>
+</helmet>
+
+<div style="width:100%;min-height:1100px;background:#12201B;display:flex;flex-wrap:wrap;align-items:stretch">
+
+<aside style="flex:1 1 240px;box-sizing:border-box;padding:24px 20px;background:#0F1B17;border-right:2px solid #2E4439;display:flex;flex-direction:column;gap:24px">
+<a href="Home.dc.html" style="display:flex;align-items:center;gap:12px">
+<div style="width:40px;height:40px;border-radius:12px;background:#FF5A36;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg></div>
+<span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-0.5px">TasteHeist</span>
+</a>
+<a href="New.dc.html" style="min-height:52px;border-radius:16px;background:#FF5A36;color:#12201B;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:16px"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>New sticker</a>
+<nav style="display:flex;flex-direction:column;gap:4px">
+<a href="Home.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;background:#1B2D26;color:#FFD54A;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>Board</a>
+<a href="MysteryWeb.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;color:#B8C5BD;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7z"></path><path d="M3.5 7 12 11.5 20.5 7"></path><path d="M12 11.5v10"></path></svg>Mystery Box</a>
+<a href="MacrosWeb.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;color:#B8C5BD;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>Macro budget</a>
+<a href="FridgeWeb.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;color:#B8C5BD;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.4c2 .8 3.5 2.6 3.5 5.6"></path></svg>Community Fridge</a>
+<a href="Settings.dc.html" style="min-height:48px;padding:0 14px;border-radius:14px;color:#B8C5BD;display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px"><svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"></path><circle cx="16" cy="7" r="2"></circle><circle cx="8" cy="17" r="2"></circle></svg>Goals and diet</a>
+</nav>
+<p style="margin-top:auto;font-size:13px;line-height:1.4;color:#B8C5BD">Sample data. Nutrition and costs are estimates.</p>
+</aside>
+
+<main style="flex:999 1 560px;min-width:0;box-sizing:border-box;padding:32px 40px 64px">
+
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+<div>
+<h1 style="font-size:48px;font-weight:800;letter-spacing:-1.5px;line-height:1">Your board</h1>
+<p style="font-size:16px;color:#B8C5BD;margin-top:8px">Six stickers, saved in this browser.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<button aria-pressed="true" style="min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #FFD54A;background:#FFD54A;color:#12201B;font-weight:700;font-size:15px">All</button>
+<button aria-pressed="false" style="min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:15px">Restaurant heists</button>
+<button aria-pressed="false" style="min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:15px">Mystery Boxes</button>
+</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:28px;margin-top:28px;align-items:flex-start">
+
+<div style="flex:1 1 640px;min-width:0;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:32px 28px;padding:32px;border-radius:32px;background-color:#1B2D26;background-image:radial-gradient(#2E4439 1.6px,transparent 1.6px);background-size:26px 26px;border:2px solid #2E4439;align-items:flex-start;min-height:560px">
+
+<a href="Detail.dc.html" aria-label="Open the Cacio e Pepe sticker" style="width:224px;box-sizing:border-box;border:6px solid #FFFFFF;border-radius:26px;background:#FFFDF7;color:#1A1A17;box-shadow:0 14px 28px rgba(0,0,0,0.4);overflow:hidden;transform:rotate(-2deg);display:block">
+<div style="height:118px;background:#FFD54A;display:flex;align-items:center;justify-content:center"><svg width="88" height="88" sc-camel-view-box="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="#FFFFFF" stroke="#E7DFCF" stroke-width="4"></circle><circle cx="100" cy="100" r="66" fill="#FFF6E0" stroke="#E7DFCF" stroke-width="2"></circle><path d="M58 100 C58 66 142 66 142 100 C142 130 66 132 66 102 C66 82 134 82 134 100" fill="none" stroke="#E9A93A" stroke-width="9" stroke-linecap="round"></path></svg></div>
+<div style="padding:12px 14px 14px"><p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;line-height:1.1">Cacio e Pepe</p><p style="font-size:14px;color:#5B5850;margin-top:4px">$25.00 menu · $3.90 home</p><p style="margin-top:8px;display:inline-block;padding:4px 10px;border-radius:999px;background:#F1EADB;font-size:13px;font-weight:700">Kept $21.10</p></div>
+</a>
+
+<a href="Detail.dc.html" aria-label="Open the Smash burger sticker" style="width:224px;box-sizing:border-box;border:6px solid #FFFFFF;border-radius:26px;background:#FFFDF7;color:#1A1A17;box-shadow:0 14px 28px rgba(0,0,0,0.4);overflow:hidden;transform:rotate(2deg);display:block;margin-top:14px">
+<div style="height:118px;background:#FFB199;display:flex;align-items:center;justify-content:center"><svg width="68" height="68" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg></div>
+<div style="padding:12px 14px 14px"><p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;line-height:1.1">Smash burger</p><p style="font-size:14px;color:#5B5850;margin-top:4px">$18.00 menu · $5.10 home</p><p style="margin-top:8px;display:inline-block;padding:4px 10px;border-radius:999px;background:#F1EADB;font-size:13px;font-weight:700">Kept $12.90</p></div>
+</a>
+
+<a href="MysteryWeb.dc.html" aria-label="Open the Mystery Box" style="width:224px;box-sizing:border-box;border:6px solid #FFFFFF;border-radius:26px;background:#12201B;color:#F4EFE6;box-shadow:0 14px 28px rgba(0,0,0,0.4);transform:rotate(-1deg);padding:20px 16px 20px;display:block">
+<div style="width:72px;height:72px;border-radius:50%;background:#FFD54A;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 7px rgba(255,213,74,0.25),0 0 32px rgba(255,213,74,0.5)"><svg width="38" height="38" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7z"></path><path d="M3.5 7 12 11.5 20.5 7"></path><path d="M12 11.5v10"></path></svg></div>
+<p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;margin-top:16px">Mystery Box</p>
+<p style="font-size:14px;color:#B8C5BD;margin-top:4px">4 ingredients · 15 min</p>
+<p style="margin-top:8px;display:inline-block;padding:4px 10px;border-radius:999px;background:#1B2D26;font-size:13px;font-weight:700;color:#FFD54A">Ready to open</p>
+</a>
+
+<a href="Detail.dc.html" aria-label="Open the Pad see ew sticker" style="width:224px;box-sizing:border-box;border:6px solid #FFFFFF;border-radius:26px;background:#FFFDF7;color:#1A1A17;box-shadow:0 14px 28px rgba(0,0,0,0.4);overflow:hidden;transform:rotate(1.5deg);display:block">
+<div style="height:118px;background:#9FE3C4;display:flex;align-items:center;justify-content:center"><svg width="68" height="68" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg></div>
+<div style="padding:12px 14px 14px"><p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;line-height:1.1">Pad see ew</p><p style="font-size:14px;color:#5B5850;margin-top:4px">$17.00 menu · $4.60 home</p><p style="margin-top:8px;display:inline-block;padding:4px 10px;border-radius:999px;background:#F1EADB;font-size:13px;font-weight:700">Kept $12.40</p></div>
+</a>
+
+<a href="Detail.dc.html" aria-label="Open the Spicy rigatoni sticker" style="width:224px;box-sizing:border-box;border:6px solid #FFFFFF;border-radius:26px;background:#FFFDF7;color:#1A1A17;box-shadow:0 14px 28px rgba(0,0,0,0.4);overflow:hidden;transform:rotate(-1.5deg);display:block;margin-top:10px">
+<div style="height:118px;background:#FFE08A;display:flex;align-items:center;justify-content:center"><svg width="68" height="68" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg></div>
+<div style="padding:12px 14px 14px"><p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;line-height:1.1">Spicy rigatoni</p><p style="font-size:14px;color:#5B5850;margin-top:4px">$22.00 menu · $3.70 home</p><p style="margin-top:8px;display:inline-block;padding:4px 10px;border-radius:999px;background:#F1EADB;font-size:13px;font-weight:700">Kept $18.30</p></div>
+</a>
+
+<a href="Detail.dc.html" aria-label="Open the Chicken tikka sticker" style="width:224px;box-sizing:border-box;border:6px solid #FFFFFF;border-radius:26px;background:#FFFDF7;color:#1A1A17;box-shadow:0 14px 28px rgba(0,0,0,0.4);overflow:hidden;transform:rotate(2deg);display:block">
+<div style="height:118px;background:#FFB199;display:flex;align-items:center;justify-content:center"><svg width="68" height="68" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg></div>
+<div style="padding:12px 14px 14px"><p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;line-height:1.1">Chicken tikka</p><p style="font-size:14px;color:#5B5850;margin-top:4px">$21.00 menu · $6.20 home</p><p style="margin-top:8px;display:inline-block;padding:4px 10px;border-radius:999px;background:#F1EADB;font-size:13px;font-weight:700">Kept $14.80</p></div>
+</a>
+
+</div>
+
+<div style="flex:0 1 340px;min-width:280px;display:flex;flex-direction:column;gap:20px">
+
+<a href="MacrosWeb.dc.html" style="display:block;border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:22px">
+<h2 style="font-size:24px;font-weight:800;letter-spacing:-0.5px">Today</h2>
+<div style="display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:15px;margin-top:14px"><span>Calories</span><span>1,470 of 2,000 kcal</span></div>
+<div style="margin-top:8px;height:16px;border-radius:8px;background:#2E4439;overflow:hidden"><div style="width:74%;height:16px;border-radius:8px;background:#FF5A36"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:15px;margin-top:16px"><span>Protein</span><span>86 of 120 g</span></div>
+<div style="margin-top:8px;height:16px;border-radius:8px;background:#2E4439;overflow:hidden"><div style="width:72%;height:16px;border-radius:8px;background:#FFD54A"></div></div>
+</a>
+
+<a href="MacrosWeb.dc.html" style="display:block;border-radius:28px;background:#FFD54A;color:#12201B;padding:22px">
+<p style="display:inline-block;padding:5px 10px;border-radius:999px;background:#12201B;color:#FFD54A;font-weight:700;font-size:12px">Smart twist</p>
+<h2 style="font-size:26px;font-weight:800;letter-spacing:-0.6px;line-height:1.1;margin-top:10px">Salmon with crispy potatoes</h2>
+<p style="font-size:15px;line-height:1.45;margin-top:8px">Sized to the 530 kcal and 34 g protein you have left today.</p>
+</a>
+
+<div style="border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:22px">
+<p style="font-size:14px;font-weight:700;color:#B8C5BD">Kept across 5 dishes</p>
+<p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:56px;line-height:1;letter-spacing:-1.5px;color:#FFD54A;margin-top:6px">$79.50</p>
+<p style="font-size:13px;color:#B8C5BD;margin-top:8px">Sample data</p>
+</div>
+
+</div>
+</div>
+
+</main>
+</div>
+</x-dc>
+</body></html>

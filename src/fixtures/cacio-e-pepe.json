@@ -1,0 +1,26 @@
+{
+  "is_food": true,
+  "dish_name": "Cacio e Pepe",
+  "menu_price_cents": 2500,
+  "thumbnail_colors": ["#FFD54A", "#E9A93A"],
+  "confidence": 0.8,
+  "assumptions": "Assumed a restaurant portion of about 120 g dry pasta, plus 1 tbsp butter and a little oil.",
+  "total_minutes": 20,
+  "ingredients": [
+    { "name": "Spaghetti", "grams_per_serving": 120, "category": "pasta", "usda_query": "spaghetti dry enriched", "kcal_per_100g_estimate": 371, "protein_per_100g_estimate": 13 },
+    { "name": "Pecorino Romano", "grams_per_serving": 40, "category": "cheese", "usda_query": "cheese romano", "kcal_per_100g_estimate": 387, "protein_per_100g_estimate": 32 },
+    { "name": "Black pepper", "grams_per_serving": 3, "category": "spice", "usda_query": "spices pepper black", "kcal_per_100g_estimate": 251, "protein_per_100g_estimate": 10 },
+    { "name": "Butter", "grams_per_serving": 14, "category": "butter_oil", "usda_query": "butter salted", "kcal_per_100g_estimate": 717, "protein_per_100g_estimate": 0.9 },
+    { "name": "Olive oil", "grams_per_serving": 7, "category": "butter_oil", "usda_query": "oil olive salad or cooking", "kcal_per_100g_estimate": 884, "protein_per_100g_estimate": 0 },
+    { "name": "Salt", "grams_per_serving": 2, "category": "spice", "usda_query": "salt table", "kcal_per_100g_estimate": 0, "protein_per_100g_estimate": 0 }
+  ],
+  "steps": [
+    "Bring a large pot of salted water to a boil.",
+    "Toast the cracked pepper in the oil for 1 minute.",
+    "Cook the spaghetti until just shy of al dente.",
+    "Reserve a cup of pasta water, then drain.",
+    "Toss the pasta with the pepper, butter and a splash of pasta water.",
+    "Off the heat, add the pecorino and toss until glossy.",
+    "Loosen with more pasta water and serve at once."
+  ]
+}

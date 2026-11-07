@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum StickerKind {
+  DISH
+  MYSTERY
+  TWIST
+}
+
+enum NutritionSource {
+  USDA
+  MODEL
+}
+
+enum ReactionKind {
+  FIRE
+  HEART
+  YUM
+}
+
+model User {
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now())
+  displayName  String   @default("Guest")
+  calorieGoal  Int      @default(2000)
+  proteinGoal  Int      @default(120)
+  units        String   @default("metric") // "metric" | "us"
+  diets        String[] @default([])       // vegetarian, gluten-free, nut-free, dairy-free
+  allergies    String[] @default([])
+  aiCallsDay   String   @default("")       // YYYY-MM-DD of the counter below
+  aiCallsToday Int      @default(0)
+
+  stickers  Sticker[]
+  meals     MealLog[]
+  posts     FridgePost[]
+  reactions Reaction[]
+  notes     Note[]
+}
+
+model Sticker {
+  id             String      @id @default(cuid())
+  userId         String
+  user           User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kind           StickerKind
+  title          String
+  thumbnail      String      // data URL, JPEG, 400px wide, about 40 KB max
+  menuPriceCents Int?        // DISH only: price of ONE plate
+  timeLimitMin   Int?        // MYSTERY only: 15, 30 or 60
+  totalMinutes   Int
+  servings       Int         @default(2) // the slider value, persisted
+  confidence     Float       // 0..1
+  assumptions    String
+  steps          String[]
+  createdAt      DateTime    @default(now())
+
+  ingredients Ingredient[]
+  meals       MealLog[]
+  posts       FridgePost[]
+
+  @@index([userId, createdAt])
+}
+
+model Ingredient {
+  id              String          @id @default(cuid())
+  stickerId       String
+  sticker         Sticker         @relation(fields: [stickerId], references: [id], onDelete: Cascade)
+  position        Int
+  name            String
+  gramsPerServing Float           // RAW, as-bought weight for ONE serving
+  category        String          // key into PRICE_PER_100G (section 6)
+  usdaQuery       String?
+  fdcId           Int?
+  kcalPer100g     Float           // snapshot at the time it was resolved
+  proteinPer100g  Float
+  source          NutritionSource
+
+  @@index([stickerId])
+}
+
+model NutrientCache {
+  query          String   @id // normalized usdaQuery (lowercase, trimmed)
+  fdcId          Int
+  description    String
+  kcalPer100g    Float
+  proteinPer100g Float
+  fetchedAt      DateTime @default(now())
+}
+
+model MealLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stickerId String?
+  sticker   Sticker? @relation(fields: [stickerId], references: [id], onDelete: SetNull)
+  name      String
+  kcal      Int
+  proteinG  Int
+  day       String   // YYYY-MM-DD in the USER's local time, sent by the client
+  createdAt DateTime @default(now())
+
+  @@index([userId, day])
+}
+
+model FridgePost {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stickerId      String?
+  sticker        Sticker? @relation(fields: [stickerId], references: [id], onDelete: SetNull)
+  title          String   // snapshots, so a post survives its sticker being deleted
+  thumbnail      String
+  menuPriceCents Int
+  homeCostCents  Int      // cost of ONE serving at post time
+  createdAt      DateTime @default(now())
+
+  reactions Reaction[]
+  notes     Note[]
+
+  @@index([createdAt])
+}
+
+model Reaction {
+  id     String       @id @default(cuid())
+  postId String
+  post   FridgePost   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  userId String
+  user   User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kind   ReactionKind
+
+  @@unique([postId, userId, kind])
+}
+
+model Note {
+  id        String     @id @default(cuid())
+  postId    String
+  post      FridgePost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  text      String     // max 140 chars, enforced by zod
+  createdAt DateTime   @default(now())
+}

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>TasteHeist</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#12201B;font-family:'DM Sans',system-ui,sans-serif;color:#F4EFE6}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;margin:0}
+p{margin:0}
+a{color:#F4EFE6}
+a:hover{color:#FFD54A}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #FFD54A;outline-offset:3px}
+input[type=range]{accent-color:#FF5A36}
+</style>
+</helmet>
+
+<div style="width:100%;background:#12201B;min-height:2900px">
+<div style="max-width:1180px;margin:0 auto;padding:0 24px 80px;box-sizing:border-box">
+
+<!-- NAV -->
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:28px 0">
+<div style="display:flex;align-items:center;gap:12px">
+<div style="width:40px;height:40px;border-radius:12px;background:{{accent}};display:flex;align-items:center;justify-content:center">
+<svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg>
+</div>
+<span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-0.5px">TasteHeist</span>
+</div>
+<nav style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+<a href="#how" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;text-decoration:none;font-weight:500">How it works</a>
+<a href="#try" style="display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:#F4EFE6;color:#12201B;text-decoration:none;font-weight:700">Try the board</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section style="display:flex;flex-wrap:wrap;align-items:center;gap:48px 32px;padding:40px 0 72px">
+<div style="flex:1 1 440px;min-width:0">
+<p style="display:inline-block;padding:8px 14px;border-radius:999px;background:#1B2D26;border:2px solid #2E4439;font-size:14px;font-weight:700;color:#FFD54A">Restaurant reverse-engineering</p>
+<h1 style="font-size:76px;line-height:1;font-weight:800;letter-spacing:-2.5px;margin-top:24px">Snap the plate.<br><span style="color:#FFD54A">Steal the recipe.</span></h1>
+<p style="font-size:20px;line-height:1.55;color:#B8C5BD;margin-top:24px;max-width:540px">Photograph a pricey restaurant dish and it becomes a sticker on your board. Flip it for the recipe and the price gap, drag it into your daily macro budget, then share it with the community fridge.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:36px">
+<a href="#try" style="display:inline-flex;align-items:center;min-height:56px;padding:0 32px;border-radius:999px;background:{{accent}};color:#12201B;text-decoration:none;font-weight:700;font-size:18px">Try the board</a>
+<a href="#how" style="display:inline-flex;align-items:center;min-height:56px;padding:0 28px;border-radius:999px;border:2px solid #F4EFE6;text-decoration:none;font-weight:700;font-size:18px">See how it works</a>
+</div>
+<p style="font-size:14px;color:#B8C5BD;margin-top:20px">Dish, prices and nutrition on this page are sample data. Photo estimates are not lab results.</p>
+</div>
+
+<div style="position:relative;flex:1 1 360px;max-width:480px;height:480px;min-width:0">
+<!-- big dish sticker -->
+<div style="position:absolute;left:10px;top:10px;width:290px;border:7px solid #FFFFFF;border-radius:30px;background:#FFFDF7;box-shadow:0 18px 36px rgba(0,0,0,0.4);transform:rotate(-6deg);overflow:hidden">
+<div style="background:#FFD54A;display:flex;align-items:center;justify-content:center;padding:18px 0">
+<svg width="190" height="190" sc-camel-view-box="0 0 200 200" aria-hidden="true">
+<circle cx="100" cy="100" r="92" fill="#FFFFFF" stroke="#E7DFCF" stroke-width="4"></circle>
+<circle cx="100" cy="100" r="66" fill="#FFF6E0" stroke="#E7DFCF" stroke-width="2"></circle>
+<path d="M58 100 C58 66 142 66 142 100 C142 130 66 132 66 102 C66 82 134 82 134 100" fill="none" stroke="#E9A93A" stroke-width="7" stroke-linecap="round"></path>
+<path d="M72 104 C72 90 128 90 128 104 C128 116 80 117 80 106" fill="none" stroke="#F2BF55" stroke-width="6" stroke-linecap="round"></path>
+<circle cx="86" cy="94" r="2.4" fill="#3B2F2F"></circle><circle cx="112" cy="90" r="2.4" fill="#3B2F2F"></circle><circle cx="124" cy="108" r="2.4" fill="#3B2F2F"></circle><circle cx="98" cy="112" r="2.4" fill="#3B2F2F"></circle><circle cx="76" cy="108" r="2.4" fill="#3B2F2F"></circle>
+</svg>
+</div>
+<div style="padding:16px 18px 20px;color:#1A1A17">
+<h3 style="font-size:26px;font-weight:800;letter-spacing:-0.5px">Cacio e Pepe</h3>
+<p style="font-size:15px;color:#5B5850;margin-top:4px">Restaurant plate</p>
+<p style="display:inline-block;margin-top:12px;padding:6px 12px;border-radius:999px;background:#F1EADB;font-weight:700;font-size:15px">$25.00 on the menu</p>
+</div>
+</div>
+<!-- price sticker -->
+<div style="position:absolute;right:0;top:170px;width:200px;border:6px solid #FFFFFF;border-radius:26px;background:{{accent}};box-shadow:0 14px 28px rgba(0,0,0,0.4);transform:rotate(7deg);padding:18px 18px 20px;color:#12201B">
+<p style="font-size:14px;font-weight:700">At home</p>
+<p style="font-family:'Bricolage Grotesque',sans-serif;font-size:52px;line-height:1;font-weight:800;letter-spacing:-1.5px;margin-top:4px">$3.90</p>
+<p style="font-size:15px;font-weight:700;margin-top:10px">You keep $21.10 a plate</p>
+</div>
+<!-- mystery sticker -->
+<div style="position:absolute;left:70px;bottom:0;width:230px;border:6px solid #FFFFFF;border-radius:26px;background:#1B2D26;box-shadow:0 14px 28px rgba(0,0,0,0.4);transform:rotate(3deg);padding:16px 18px;display:flex;align-items:center;gap:14px">
+<div style="width:52px;height:52px;border-radius:50%;background:#FFD54A;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 0 0 5px rgba(255,213,74,0.25),0 0 26px rgba(255,213,74,0.45)">
+<svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7z"></path><path d="M3.5 7 12 11.5 20.5 7"></path><path d="M12 11.5v10"></path></svg>
+</div>
+<div>
+<p style="font-weight:700;font-size:17px">Mystery Box</p>
+<p style="font-size:14px;color:#B8C5BD">Dinner in 15 min</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRY THE BOARD -->
+<section id="try" style="padding:24px 0 80px">
+<h2 style="font-size:48px;line-height:1.05;font-weight:800;letter-spacing:-1.5px">Try the board</h2>
+<p style="font-size:18px;line-height:1.55;color:#B8C5BD;margin-top:12px;max-width:620px">Every photo turns into a sticker. Pick a mode, then flip, slide and dial.</p>
+
+<div style="margin-top:32px;border-radius:36px;background-color:#1B2D26;background-image:radial-gradient(#2E4439 1.6px,transparent 1.6px);background-size:26px 26px;padding:32px;border:2px solid #2E4439">
+
+<div style="display:inline-flex;flex-wrap:wrap;gap:4px;padding:6px;border-radius:999px;background:#12201B;border:2px solid #2E4439">
+<button sc-camel-on-click="{{setHeist}}" aria-pressed="{{isHeist}}" style="min-height:48px;padding:0 24px;border:0;border-radius:999px;font-weight:700;font-size:16px;background:{{heistBg}};color:{{heistFg}}">Heist a dish</button>
+<button sc-camel-on-click="{{setMystery}}" aria-pressed="{{isMystery}}" style="min-height:48px;padding:0 24px;border:0;border-radius:999px;font-weight:700;font-size:16px;background:{{mysteryBg}};color:{{mysteryFg}}">Mystery Box</button>
+<button sc-camel-on-click="{{setMacro}}" aria-pressed="{{isMacro}}" style="min-height:48px;padding:0 24px;border:0;border-radius:999px;font-weight:700;font-size:16px;background:{{macroBg}};color:{{macroFg}}">Macro budget</button>
+<button sc-camel-on-click="{{setCommunity}}" aria-pressed="{{isCommunity}}" style="min-height:48px;padding:0 24px;border:0;border-radius:999px;font-weight:700;font-size:16px;background:{{communityBg}};color:{{communityFg}}">Community Fridge</button>
+</div>
+
+<!-- HEIST MODE -->
+<sc-if value="{{isHeist}}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px;margin-top:32px">
+
+<div style="flex:0 1 380px;width:100%;max-width:380px;transform:rotate(-1.5deg)">
+<div style="perspective:1400px;width:100%;height:640px">
+<div style="position:relative;width:100%;height:640px;transform-style:preserve-3d;transition:transform 0.7s cubic-bezier(0.3,1.2,0.4,1);transform:rotateY({{flipDeg}}deg)">
+
+<!-- FRONT -->
+<div style="position:absolute;left:0;top:0;right:0;bottom:0;box-sizing:border-box;border:7px solid #FFFFFF;border-radius:32px;background:#FFFDF7;box-shadow:0 20px 40px rgba(0,0,0,0.45);overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;color:#1A1A17;display:flex;flex-direction:column;visibility:{{frontVis}};transition:visibility 0s linear 0.35s">
+<div style="background:#FFD54A;flex:1;display:flex;align-items:center;justify-content:center;position:relative">
+<p style="position:absolute;left:16px;top:16px;padding:6px 12px;border-radius:999px;background:#1A1A17;color:#FFFDF7;font-size:13px;font-weight:700">Sample dish</p>
+<svg width="250" height="250" sc-camel-view-box="0 0 200 200" role="img" aria-label="Illustration of a plate of cacio e pepe pasta">
+<circle cx="100" cy="100" r="92" fill="#FFFFFF" stroke="#E7DFCF" stroke-width="4"></circle>
+<circle cx="100" cy="100" r="66" fill="#FFF6E0" stroke="#E7DFCF" stroke-width="2"></circle>
+<path d="M58 100 C58 66 142 66 142 100 C142 130 66 132 66 102 C66 82 134 82 134 100" fill="none" stroke="#E9A93A" stroke-width="7" stroke-linecap="round"></path>
+<path d="M72 104 C72 90 128 90 128 104 C128 116 80 117 80 106" fill="none" stroke="#F2BF55" stroke-width="6" stroke-linecap="round"></path>
+<circle cx="86" cy="94" r="2.4" fill="#3B2F2F"></circle><circle cx="112" cy="90" r="2.4" fill="#3B2F2F"></circle><circle cx="124" cy="108" r="2.4" fill="#3B2F2F"></circle><circle cx="98" cy="112" r="2.4" fill="#3B2F2F"></circle><circle cx="76" cy="108" r="2.4" fill="#3B2F2F"></circle>
+</svg>
+</div>
+<div style="padding:22px 24px 24px">
+<h3 style="font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.05">Cacio e Pepe</h3>
+<p style="font-size:16px;color:#5B5850;margin-top:6px">Photographed at a restaurant</p>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px">
+<p style="padding:8px 14px;border-radius:999px;background:#F1EADB;font-weight:700;font-size:16px">$25.00 on the menu</p>
+</div>
+<button sc-camel-on-click="{{toggleFlip}}" style="margin-top:18px;width:100%;min-height:56px;display:flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:18px;background:#1A1A17;color:#FFFDF7;font-weight:700;font-size:17px">
+<svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg>
+Flip for the recipe
+</button>
+</div>
+</div>
+
+<!-- BACK -->
+<div style="position:absolute;left:0;top:0;right:0;bottom:0;box-sizing:border-box;border:7px solid #FFFFFF;border-radius:32px;background:#FFFDF7;box-shadow:0 20px 40px rgba(0,0,0,0.45);overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);color:#1A1A17;padding:20px 22px;display:flex;flex-direction:column;gap:14px;visibility:{{backVis}};transition:visibility 0s linear 0.35s">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.8px;line-height:1.05">Cacio e Pepe</h3>
+<button sc-camel-on-click="{{toggleFlip}}" aria-label="Flip the sticker back to the photo" style="flex:none;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:0;border-radius:14px;background:#1A1A17;color:#FFFDF7">
+<svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg>
+</button>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+<p style="padding:7px 12px;border-radius:999px;background:#FFD54A;font-weight:700;font-size:14px">About 640 kcal</p>
+<p style="padding:7px 12px;border-radius:999px;background:#F1EADB;font-weight:700;font-size:14px">About 24 g protein</p>
+<p style="font-size:13px;color:#5B5850">per serving, estimated</p>
+</div>
+
+<div>
+<div style="display:flex;align-items:baseline;justify-content:space-between">
+<label for="servings" style="font-weight:700;font-size:15px">Servings</label>
+<p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1">{{servings}}</p>
+</div>
+<input id="servings" type="range" min="1" max="6" step="1" value="{{servings}}" sc-camel-on-change="{{onServings}}" style="width:100%;height:32px;margin:6px 0 0;display:block">
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#5B5850;padding:0 4px"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+</div>
+
+<ul style="list-style:none;margin:0;padding:0;border-top:2px solid #F1EADB">
+<sc-for list="{{ingredients}}" as="ing" hint-placeholder-count="5">
+<li style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:2px solid #F1EADB;font-size:15px"><span>{{ing.name}}</span><span style="font-weight:700;white-space:nowrap">{{ing.qty}}</span></li>
+</sc-for>
+</ul>
+
+<ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.4">
+<li style="display:flex;gap:10px"><span style="flex:none;font-weight:800">1</span><span>Toast the pepper in butter, then add pasta water.</span></li>
+<li style="display:flex;gap:10px"><span style="flex:none;font-weight:800">2</span><span>Boil spaghetti two minutes short and move it into the pan.</span></li>
+<li style="display:flex;gap:10px"><span style="flex:none;font-weight:800">3</span><span>Off the heat, toss in the pecorino until glossy.</span></li>
+</ol>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<div style="border-radius:28px;background:#12201B;border:2px solid #2E4439;padding:28px">
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px">The heist math</h3>
+<p style="font-size:15px;color:#B8C5BD;margin-top:6px">{{servings}} {{plateWord}}. Move the slider on the back of the sticker and the numbers follow.</p>
+
+<div style="margin-top:24px">
+<div style="display:flex;justify-content:space-between;font-weight:700;font-size:15px"><span>At the restaurant</span><span>${{restaurantTotal}}</span></div>
+<div style="margin-top:8px;height:32px;border-radius:10px;background:#F4EFE6;width:100%"></div>
+</div>
+<div style="margin-top:20px">
+<div style="display:flex;justify-content:space-between;font-weight:700;font-size:15px"><span>At home</span><span>${{homeTotal}}</span></div>
+<div style="margin-top:8px;height:32px;border-radius:10px;background:{{accent}};width:{{homeBarW}}%;min-width:8px;transition:width 0.4s ease"></div>
+</div>
+
+<div style="margin-top:28px;padding-top:20px;border-top:2px solid #2E4439">
+<p style="font-size:15px;color:#B8C5BD">You keep</p>
+<p style="font-family:'Bricolage Grotesque',sans-serif;font-size:64px;line-height:1;font-weight:800;letter-spacing:-2px;color:#FFD54A;margin-top:4px">${{keepTotal}}</p>
+</div>
+</div>
+<p style="font-size:14px;line-height:1.5;color:#B8C5BD">Home cost is a sample grocery estimate. Live store prices are on the roadmap below.</p>
+</div>
+
+</sc-if></div>
+
+
+<!-- MYSTERY MODE -->
+<sc-if value="{{isMystery}}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:40px;margin-top:32px">
+
+<div style="flex:0 1 380px;width:100%;max-width:380px;transform:rotate(1.5deg)">
+<div style="box-sizing:border-box;width:100%;min-height:640px;border:7px solid #FFFFFF;border-radius:32px;background:#FFFDF7;box-shadow:0 20px 40px rgba(0,0,0,0.45);color:#1A1A17;padding:28px 24px;display:flex;flex-direction:column">
+
+<sc-if value="{{boxClosed}}" hint-placeholder-val="{{ true }}">
+<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:20px">
+<div style="width:190px;height:190px;border-radius:50%;background:#FFD54A;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(255,213,74,0.3),0 0 70px rgba(255,180,0,0.55)">
+<svg width="104" height="104" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7z"></path><path d="M3.5 7 12 11.5 20.5 7"></path><path d="M12 11.5v10"></path></svg>
+</div>
+<h3 style="font-size:36px;font-weight:800;letter-spacing:-1px;line-height:1.05">Mystery Box</h3>
+<p style="font-size:16px;line-height:1.5;color:#5B5850;max-width:260px">Four ingredients spotted on the counter. Set the dial, then open it.</p>
+<button sc-camel-on-click="{{openBox}}" style="min-height:56px;padding:0 36px;border:0;border-radius:18px;background:#1A1A17;color:#FFFDF7;font-weight:700;font-size:17px">Open the box</button>
+</div>
+</sc-if>
+
+<sc-if value="{{boxOpen}}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:16px;flex:1">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+<p style="padding:7px 14px;border-radius:999px;background:#FFD54A;font-weight:700;font-size:15px">{{recipe.time}}</p>
+<button sc-camel-on-click="{{closeBox}}" style="min-height:44px;padding:0 16px;border:0;border-radius:14px;background:#1A1A17;color:#FFFDF7;font-weight:700;font-size:15px">Close box</button>
+</div>
+<h3 style="font-size:36px;font-weight:800;letter-spacing:-1px;line-height:1.05">{{recipe.title}}</h3>
+<p style="font-size:15px;line-height:1.5;color:#5B5850">Uses everything you photographed. Turn the dial and the recipe rewrites itself.</p>
+<ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;border-top:2px solid #F1EADB;padding-top:16px">
+<sc-for list="{{recipe.steps}}" as="st" hint-placeholder-count="3">
+<li style="display:flex;gap:14px;font-size:16px;line-height:1.45"><span style="flex:none;width:32px;height:32px;border-radius:50%;background:#1A1A17;color:#FFFDF7;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px">{{st.n}}</span><span>{{st.text}}</span></li>
+</sc-for>
+</ol>
+</div>
+</sc-if>
+
+</div>
+</div>
+
+<div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<div style="border-radius:28px;background:#12201B;border:2px solid #2E4439;padding:28px">
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px">Time-crunch dial</h3>
+<p style="font-size:15px;color:#B8C5BD;margin-top:6px">The AI is held to your clock, so 15 minutes means a stir-fry, not a bake.</p>
+
+<div style="position:relative;width:220px;height:124px;margin:28px auto 8px">
+<div style="position:absolute;left:0;top:0;width:220px;height:112px;box-sizing:border-box;border:5px solid #F4EFE6;border-bottom:0;border-radius:220px 220px 0 0"></div>
+<span style="position:absolute;left:18px;top:62px;font-size:13px;font-weight:700">15</span>
+<span style="position:absolute;left:96px;top:14px;font-size:13px;font-weight:700">30</span>
+<span style="position:absolute;right:16px;top:62px;font-size:13px;font-weight:700">60</span>
+<div style="position:absolute;left:108px;top:30px;width:4px;height:80px;border-radius:4px;background:{{accent}};transform-origin:50% 100%;transform:rotate({{needleDeg}}deg);transition:transform 0.5s cubic-bezier(0.3,1.5,0.5,1)"></div>
+<div style="position:absolute;left:100px;top:100px;width:20px;height:20px;border-radius:50%;background:#F4EFE6"></div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px">
+<sc-for list="{{dials}}" as="d" hint-placeholder-count="3">
+<button sc-camel-on-click="{{d.pick}}" aria-pressed="{{d.on}}" style="min-height:48px;min-width:92px;padding:0 20px;border-radius:999px;font-weight:700;font-size:16px;background:{{d.bg}};color:{{d.fg}};border:2px solid {{d.bd}}">{{d.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="border-radius:28px;background:#12201B;border:2px solid #2E4439;padding:28px">
+<h3 style="font-size:22px;font-weight:800;letter-spacing:-0.4px">On your counter</h3>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+<p style="padding:8px 14px;border-radius:999px;background:#F4EFE6;color:#12201B;font-weight:700;font-size:15px">Eggs</p>
+<p style="padding:8px 14px;border-radius:999px;background:#F4EFE6;color:#12201B;font-weight:700;font-size:15px">Cooked rice</p>
+<p style="padding:8px 14px;border-radius:999px;background:#F4EFE6;color:#12201B;font-weight:700;font-size:15px">Scallions</p>
+<p style="padding:8px 14px;border-radius:999px;background:#F4EFE6;color:#12201B;font-weight:700;font-size:15px">Tomatoes</p>
+</div>
+<p style="font-size:14px;color:#B8C5BD;margin-top:14px">Sample counter. In the app this list comes from your photo, and you can correct it.</p>
+</div>
+</div>
+
+</div>
+</sc-if>
+
+<!-- MACRO MODE -->
+<sc-if value="{{isMacro}}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:32px;margin-top:32px">
+
+<div style="flex:1 1 360px;min-width:0">
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px">Your stickers</h3>
+<p style="font-size:15px;color:#B8C5BD;margin-top:6px">Drag a sticker into the Consumed zone, or press its Eat button.</p>
+<div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:20px">
+<sc-for list="{{tray}}" as="f" hint-placeholder-count="4">
+<div draggable="true" sc-camel-on-drag-start="{{f.drag}}" style="width:172px;box-sizing:border-box;border:5px solid #FFFFFF;border-radius:22px;background:#FFFDF7;color:#1A1A17;box-shadow:0 10px 22px rgba(0,0,0,0.4);overflow:hidden;cursor:grab;transform:rotate({{f.tilt}}deg)">
+<div style="height:70px;background:{{f.color}};display:flex;align-items:center;justify-content:center">
+<svg width="40" height="40" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg>
+</div>
+<div style="padding:12px 14px 14px">
+<p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;line-height:1.1">{{f.name}}</p>
+<p style="font-size:13px;color:#5B5850;margin-top:6px">{{f.kcal}} kcal, {{f.protein}} g protein</p>
+<button sc-camel-on-click="{{f.eat}}" aria-label="Eat {{f.name}}" style="margin-top:10px;width:100%;min-height:44px;border:0;border-radius:12px;background:#1A1A17;color:#FFFDF7;font-weight:700;font-size:15px">Eat</button>
+</div>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{trayEmpty}}" hint-placeholder-val="{{ false }}">
+<p style="font-size:15px;color:#B8C5BD;margin-top:8px">Every sticker is eaten. Remove one from the Consumed zone to bring it back.</p>
+</sc-if>
+</div>
+
+<div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px">
+
+<div sc-camel-on-drag-over="{{onOver}}" sc-camel-on-drag-leave="{{onLeave}}" sc-camel-on-drop="{{onDrop}}" style="border-radius:28px;border:3px dashed {{zoneBorder}};background:{{zoneBg}};padding:24px;min-height:180px">
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px">Consumed today</h3>
+<sc-if value="{{noneConsumed}}" hint-placeholder-val="{{ false }}">
+<p style="font-size:15px;color:#B8C5BD;margin-top:10px">Nothing yet. Drop a sticker here.</p>
+</sc-if>
+<ul style="list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:8px">
+<sc-for list="{{consumedList}}" as="c" hint-placeholder-count="3">
+<li style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;border-radius:16px;background:#1B2D26">
+<span style="font-weight:700;font-size:16px">{{c.name}}</span>
+<span style="display:flex;align-items:center;gap:12px;font-size:14px;color:#B8C5BD"><span>{{c.kcal}} kcal, {{c.protein}} g</span><button sc-camel-on-click="{{c.remove}}" aria-label="Remove {{c.name}}" style="min-height:44px;padding:0 14px;border:2px solid #F4EFE6;border-radius:12px;background:transparent;color:#F4EFE6;font-weight:700;font-size:14px">Remove</button></span>
+</li>
+</sc-for>
+</ul>
+</div>
+
+<div style="border-radius:28px;background:#12201B;border:2px solid #2E4439;padding:28px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:700;font-size:16px"><span>Calories</span><span>{{eatenK}} of {{goalK}} kcal</span></div>
+<div style="margin-top:10px;height:22px;border-radius:11px;background:#2E4439;overflow:hidden"><div style="height:22px;border-radius:11px;background:{{accent}};width:{{kcalPct}}%;transition:width 0.4s ease"></div></div>
+<p style="font-size:14px;color:#B8C5BD;margin-top:8px">{{kcalLeft}}</p>
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-weight:700;font-size:16px;margin-top:22px"><span>Protein</span><span>{{eatenP}} of {{goalP}} g</span></div>
+<div style="margin-top:10px;height:22px;border-radius:11px;background:#2E4439;overflow:hidden"><div style="height:22px;border-radius:11px;background:#FFD54A;width:{{proteinPct}}%;transition:width 0.4s ease"></div></div>
+<p style="font-size:14px;color:#B8C5BD;margin-top:8px">{{proteinLeft}}</p>
+</div>
+
+<div style="border-radius:28px;background:#FFD54A;color:#12201B;padding:28px">
+<p style="display:inline-block;padding:6px 12px;border-radius:999px;background:#12201B;color:#FFD54A;font-weight:700;font-size:13px">Smart twist</p>
+<sc-if value="{{hasTwist}}" hint-placeholder-val="{{ true }}">
+<h3 style="font-size:30px;font-weight:800;letter-spacing:-0.8px;line-height:1.1;margin-top:14px">{{twist.title}}</h3>
+<p style="font-size:16px;line-height:1.5;margin-top:8px">You have {{remK}} kcal and {{remP}} g protein left today. This portion lands at {{twist.kcal}} kcal and {{twist.protein}} g protein.</p>
+<ul style="list-style:none;margin:14px 0 0;padding:0">
+<sc-for list="{{twist.items}}" as="it" hint-placeholder-count="3">
+<li style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:2px solid rgba(18,32,27,0.2);font-size:16px"><span>{{it.name}}</span><span style="font-weight:700">{{it.qty}}</span></li>
+</sc-for>
+</ul>
+<button sc-camel-on-click="{{addTwist}}" style="margin-top:18px;min-height:52px;padding:0 28px;border:0;border-radius:16px;background:#12201B;color:#FFD54A;font-weight:700;font-size:16px">Add to my day</button>
+</sc-if>
+<sc-if value="{{noTwist}}" hint-placeholder-val="{{ false }}">
+<h3 style="font-size:30px;font-weight:800;letter-spacing:-0.8px;line-height:1.1;margin-top:14px">Budget closed out</h3>
+<p style="font-size:16px;line-height:1.5;margin-top:8px">There is too little left in today's budget for another full meal. Remove a sticker to see a suggestion again.</p>
+</sc-if>
+<p style="font-size:13px;margin-top:16px">Suggestions pick from three sample recipes and scale the portion to what is left. A real build would generate one with the model.</p>
+</div>
+
+</div>
+</div>
+</sc-if>
+
+<!-- COMMUNITY MODE -->
+<sc-if value="{{isCommunity}}" hint-placeholder-val="{{ false }}">
+<div style="margin-top:32px">
+
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px 40px;border-radius:24px;background:#12201B;border:2px solid #2E4439;padding:20px 24px">
+<div style="flex:1 1 240px;min-width:0">
+<h3 style="font-size:24px;font-weight:800;letter-spacing:-0.5px">Stickers to hand out</h3>
+<p style="font-size:14px;color:#B8C5BD;margin-top:4px">Drag one onto a dish, or use the buttons on the dish.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:16px">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div draggable="true" sc-camel-on-drag-start="{{dragFire}}" style="width:60px;height:60px;border-radius:50%;background:#FF5A36;border:4px solid #FFFFFF;display:flex;align-items:center;justify-content:center;cursor:grab;box-shadow:0 6px 14px rgba(0,0,0,0.4)"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.2 2-4.2.2 1.2.8 2 1.6 2.4C10.2 8.4 10.6 5.6 12 3z"></path></svg></div>
+<span style="font-size:13px;font-weight:700">Fire</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div draggable="true" sc-camel-on-drag-start="{{dragHeart}}" style="width:60px;height:60px;border-radius:50%;background:#FF9DB0;border:4px solid #FFFFFF;display:flex;align-items:center;justify-content:center;cursor:grab;box-shadow:0 6px 14px rgba(0,0,0,0.4)"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></div>
+<span style="font-size:13px;font-weight:700">Heart</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div draggable="true" sc-camel-on-drag-start="{{dragYum}}" style="width:60px;height:60px;border-radius:50%;background:#FFD54A;border:4px solid #FFFFFF;display:flex;align-items:center;justify-content:center;cursor:grab;box-shadow:0 6px 14px rgba(0,0,0,0.4)"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 13.5c1 1.8 2.6 2.5 4 2.5s3-.7 4-2.5"></path><path d="M9 9.5h.01M15 9.5h.01"></path></svg></div>
+<span style="font-size:13px;font-weight:700">Yum</span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<div draggable="true" sc-camel-on-drag-start="{{dragNote}}" style="width:60px;height:60px;border-radius:14px;background:#FFE98A;border:4px solid #FFFFFF;display:flex;align-items:center;justify-content:center;cursor:grab;box-shadow:0 6px 14px rgba(0,0,0,0.4)"><svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h5"></path></svg></div>
+<span style="font-size:13px;font-weight:700">Note</span>
+</div>
+</div>
+<div style="flex:1 1 240px;min-width:0">
+<label for="notetext" style="display:block;font-size:14px;font-weight:700;margin-bottom:6px">Text for your sticky note</label>
+<input id="notetext" type="text" value="{{noteText}}" sc-camel-on-change="{{onNoteText}}" style="width:100%;box-sizing:border-box;min-height:48px;padding:0 14px;border:2px solid #2E4439;border-radius:14px;background:#FFFDF7;color:#1A1A17;font-family:inherit;font-size:16px">
+</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:28px;margin-top:28px;align-items:flex-start">
+<sc-for list="{{cards}}" as="c" hint-placeholder-count="3">
+<div sc-camel-on-drag-over="{{c.onOver}}" sc-camel-on-drop="{{c.onDrop}}" style="flex:1 1 280px;max-width:360px;box-sizing:border-box;border:7px solid #FFFFFF;border-radius:30px;background:#FFFDF7;color:#1A1A17;box-shadow:0 18px 36px rgba(0,0,0,0.4);overflow:hidden;transform:rotate({{c.tilt}}deg)">
+<div style="height:120px;background:{{c.color}};display:flex;align-items:center;justify-content:space-between;padding:0 20px">
+<svg width="64" height="64" sc-camel-view-box="0 0 24 24" fill="none" stroke="#1A1A17" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4.5"></circle></svg>
+<p style="padding:6px 12px;border-radius:999px;background:#1A1A17;color:#FFFDF7;font-size:13px;font-weight:700">by {{c.by}}</p>
+</div>
+<div style="padding:18px 20px 22px">
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.8px;line-height:1.05">{{c.title}}</h3>
+<p style="font-size:15px;margin-top:8px"><span style="color:#5B5850">Menu</span> <span style="font-weight:700">${{c.rest}}</span> <span style="color:#5B5850">to home</span> <span style="font-weight:700">${{c.home}}</span></p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+<button sc-camel-on-click="{{c.reactFire}}" aria-label="Give a fire sticker to {{c.title}}" style="min-height:44px;padding:0 14px;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;background:#FFB199;color:#1A1A17;font-weight:700;font-size:15px"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.2 2-4.2.2 1.2.8 2 1.6 2.4C10.2 8.4 10.6 5.6 12 3z"></path></svg>{{c.fire}}</button>
+<button sc-camel-on-click="{{c.reactHeart}}" aria-label="Give a heart sticker to {{c.title}}" style="min-height:44px;padding:0 14px;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;background:#FFC7D2;color:#1A1A17;font-weight:700;font-size:15px"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>{{c.heart}}</button>
+<button sc-camel-on-click="{{c.reactYum}}" aria-label="Give a yum sticker to {{c.title}}" style="min-height:44px;padding:0 14px;display:flex;align-items:center;gap:8px;border:0;border-radius:999px;background:#FFE98A;color:#1A1A17;font-weight:700;font-size:15px"><svg width="20" height="20" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 13.5c1 1.8 2.6 2.5 4 2.5s3-.7 4-2.5"></path><path d="M9 9.5h.01M15 9.5h.01"></path></svg>{{c.yum}}</button>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
+<sc-for list="{{c.notes}}" as="nt" hint-placeholder-count="1">
+<p style="padding:10px 12px;border-radius:6px;background:#FFE98A;font-size:15px;line-height:1.35;box-shadow:0 4px 8px rgba(0,0,0,0.15);transform:rotate(-1deg)">{{nt.text}}</p>
+</sc-for>
+</div>
+<button sc-camel-on-click="{{c.addNote}}" style="margin-top:16px;width:100%;min-height:48px;border:0;border-radius:14px;background:#1A1A17;color:#FFFDF7;font-weight:700;font-size:15px">Stick my note on</button>
+</div>
+</div>
+</sc-for>
+</div>
+
+<p style="font-size:14px;color:#B8C5BD;margin-top:24px">This board is simulated on your screen. Real-time sync between people is the multiplayer build.</p>
+</div>
+</sc-if>
+
+</section></div>
+
+
+<!-- HOW IT WORKS -->
+<section id="how" style="padding:24px 0 72px">
+<h2 style="font-size:48px;line-height:1.05;font-weight:800;letter-spacing:-1.5px">From plate to plan to community</h2>
+<div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:36px">
+<div style="flex:1 1 220px;min-width:0;border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:28px">
+<div style="width:56px;height:56px;border-radius:50%;background:{{accent}};display:flex;align-items:center;justify-content:center">
+<svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+</div>
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px;margin-top:20px">Snap it</h3>
+<p style="font-size:16px;line-height:1.55;color:#B8C5BD;margin-top:8px">Photograph a restaurant plate, or the odds and ends on your counter.</p>
+</div>
+<div style="flex:1 1 220px;min-width:0;border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:28px">
+<div style="width:56px;height:56px;border-radius:50%;background:#FFD54A;display:flex;align-items:center;justify-content:center">
+<svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg>
+</div>
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px;margin-top:20px">Flip it</h3>
+<p style="font-size:16px;line-height:1.55;color:#B8C5BD;margin-top:8px">Each photo becomes a sticker. Flip it for estimated macros, a recipe and the price gap.</p>
+</div>
+<div style="flex:1 1 220px;min-width:0;border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:28px">
+<div style="width:56px;height:56px;border-radius:50%;background:#F4EFE6;display:flex;align-items:center;justify-content:center">
+<svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+</div>
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px;margin-top:20px">Cook it</h3>
+<p style="font-size:16px;line-height:1.55;color:#B8C5BD;margin-top:8px">Set the time dial and the serving slider. The recipe rewrites itself to fit.</p>
+</div>
+<div style="flex:1 1 220px;min-width:0;border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:28px">
+<div style="width:56px;height:56px;border-radius:50%;background:{{accent}};display:flex;align-items:center;justify-content:center">
+<svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+</div>
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px;margin-top:20px">Track it</h3>
+<p style="font-size:16px;line-height:1.55;color:#B8C5BD;margin-top:8px">Drag stickers into today. The bars fill, and the app suggests a meal sized to what is left.</p>
+</div>
+<div style="flex:1 1 220px;min-width:0;border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:28px">
+<div style="width:56px;height:56px;border-radius:50%;background:#FFD54A;display:flex;align-items:center;justify-content:center">
+<svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#12201B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"></path><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.4c2 .8 3.5 2.6 3.5 5.6"></path></svg>
+</div>
+<h3 style="font-size:28px;font-weight:800;letter-spacing:-0.6px;margin-top:20px">Share it</h3>
+<p style="font-size:16px;line-height:1.55;color:#B8C5BD;margin-top:8px">Post it to the Community Fridge. Friends drop reaction stickers and sticky notes right on your dish.</p>
+</div>
+</div>
+</section>
+
+<!-- HONESTY + ROADMAP -->
+<section style="display:flex;flex-wrap:wrap;gap:20px;padding-bottom:40px">
+<div style="flex:1 1 440px;min-width:0;border-radius:28px;background:#FFD54A;color:#12201B;padding:32px">
+<h3 style="font-size:32px;font-weight:800;letter-spacing:-0.8px;line-height:1.1">Estimates, with the error bars showing</h3>
+<p style="font-size:17px;line-height:1.55;margin-top:12px">Calories and macros read from a photo are educated guesses, because portion size and hidden oil are hard to see. TasteHeist labels them as estimates and lets you correct the portion.</p>
+</div>
+<div style="flex:1 1 440px;min-width:0;border-radius:28px;background:#1B2D26;border:2px solid #2E4439;padding:32px">
+<h3 style="font-size:32px;font-weight:800;letter-spacing:-0.8px;line-height:1.1">Next on the board</h3>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px">
+<p style="padding:10px 16px;border-radius:999px;border:2px solid #F4EFE6;font-weight:700;font-size:16px">Live grocery prices</p>
+<p style="padding:10px 16px;border-radius:999px;border:2px solid #F4EFE6;font-weight:700;font-size:16px">Real-time multiplayer</p>
+<p style="padding:10px 16px;border-radius:999px;border:2px solid #F4EFE6;font-weight:700;font-size:16px">Receipt and menu import</p>
+</div>
+<p style="font-size:16px;line-height:1.55;color:#B8C5BD;margin-top:16px">The demo above simulates multiplayer and uses sample prices and sample recipes. These are the pieces that make it real.</p>
+</div>
+</section>
+
+<footer style="padding-top:32px;border-top:2px solid #2E4439;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:#B8C5BD">
+<span>TasteHeist is a hackathon concept.</span>
+<span>All dishes, prices and nutrition shown are sample data.</span>
+</footer>
+
+</div>
+
+</x-dc>
+
+</body></html>

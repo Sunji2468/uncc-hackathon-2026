@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Capture</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#0B1511;font-family:'DM Sans',system-ui,sans-serif;color:#F4EFE6}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #FFD54A;outline-offset:3px}
+</style>
+</helmet>
+
+<div style="position:relative;width:390px;height:844px;overflow:hidden;background:#0B1511">
+
+<div style="position:absolute;left:0;right:0;top:0;padding:24px 20px 0;display:flex;align-items:center;justify-content:space-between">
+<a href="Board.dc.html" aria-label="Close the camera" style="width:48px;height:48px;border-radius:50%;background:#1B2D26;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></a>
+<div style="display:flex;padding:4px;border-radius:999px;background:#1B2D26;gap:4px">
+<span style="min-height:44px;padding:0 20px;display:flex;align-items:center;border-radius:999px;background:#FFD54A;color:#12201B;font-weight:700;font-size:15px">Dish</span>
+<a href="Mystery.dc.html" style="min-height:44px;padding:0 20px;display:flex;align-items:center;border-radius:999px;color:#F4EFE6;font-weight:700;font-size:15px">Counter</a>
+</div>
+<div style="width:48px"></div>
+</div>
+
+<div style="position:absolute;left:28px;right:28px;top:110px;height:370px">
+<div style="position:absolute;left:0;top:0;width:40px;height:40px;border-left:4px solid #FFD54A;border-top:4px solid #FFD54A;border-radius:14px 0 0 0"></div>
+<div style="position:absolute;right:0;top:0;width:40px;height:40px;border-right:4px solid #FFD54A;border-top:4px solid #FFD54A;border-radius:0 14px 0 0"></div>
+<div style="position:absolute;left:0;bottom:0;width:40px;height:40px;border-left:4px solid #FFD54A;border-bottom:4px solid #FFD54A;border-radius:0 0 0 14px"></div>
+<div style="position:absolute;right:0;bottom:0;width:40px;height:40px;border-right:4px solid #FFD54A;border-bottom:4px solid #FFD54A;border-radius:0 0 14px 0"></div>
+<div style="position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;opacity:0.35">
+<svg width="230" height="230" sc-camel-view-box="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="92" fill="#FFFFFF" stroke="#E7DFCF" stroke-width="4"></circle><circle cx="100" cy="100" r="66" fill="#FFF6E0" stroke="#E7DFCF" stroke-width="2"></circle><path d="M58 100 C58 66 142 66 142 100 C142 130 66 132 66 102 C66 82 134 82 134 100" fill="none" stroke="#E9A93A" stroke-width="7" stroke-linecap="round"></path></svg>
+</div>
+</div>
+<p style="position:absolute;left:0;right:0;top:494px;text-align:center;font-size:14px;color:#B8C5BD">Center the plate. Good light helps.</p>
+
+<div style="position:absolute;left:0;right:0;bottom:0;box-sizing:border-box;padding:22px 20px 24px;background:#12201B;border-radius:28px 28px 0 0;border-top:2px solid #2E4439">
+
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+<label for="price" style="font-weight:700;font-size:16px">Menu price</label>
+<div style="display:flex;align-items:center;gap:4px;padding:0 14px;min-height:48px;border-radius:14px;background:#FFFDF7;color:#1A1A17;width:140px;box-sizing:border-box">
+<span style="font-weight:700;font-size:18px">$</span>
+<input id="price" type="text" value="25.00" style="border:0;background:transparent;width:100%;font-family:inherit;font-weight:700;font-size:18px;color:#1A1A17;min-height:44px">
+</div>
+</div>
+
+<p style="font-weight:700;font-size:16px;margin-top:18px">Dietary needs</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+<button aria-pressed="false" style="min-height:44px;padding:0 16px;border-radius:999px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:14px">Vegetarian</button>
+<button aria-pressed="false" style="min-height:44px;padding:0 16px;border-radius:999px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:14px">Gluten-free</button>
+<button aria-pressed="true" style="min-height:44px;padding:0 16px;border-radius:999px;border:2px solid #FFD54A;background:#FFD54A;color:#12201B;font-weight:700;font-size:14px">Nut-free</button>
+<button aria-pressed="false" style="min-height:44px;padding:0 16px;border-radius:999px;border:2px solid #F4EFE6;background:transparent;color:#F4EFE6;font-weight:700;font-size:14px">Dairy-free</button>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:space-between;margin-top:22px">
+<button aria-label="Upload a photo from your library" style="width:56px;height:56px;border-radius:16px;border:2px solid #2E4439;background:#1B2D26;color:#F4EFE6;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M5 14v6h14v-6"></path></svg></button>
+<a href="States.dc.html" aria-label="Take the photo" style="width:80px;height:80px;border-radius:50%;border:5px solid #F4EFE6;display:flex;align-items:center;justify-content:center"><span style="width:56px;height:56px;border-radius:50%;background:#FF5A36;display:block"></span></a>
+<div style="width:56px"></div>
+</div>
+
+</div>
+
+</div>
+</x-dc>
+</body></html>
