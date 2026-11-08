@@ -115,3 +115,17 @@ describe("runWithRetry", () => {
     expect(attempt).toHaveBeenCalledTimes(1);
   });
 });
+
+describe("Mystery Box cooking time", () => {
+  it.each([1, 15, 30, 60, 120, 180, 245, 600])("accepts a %i minute limit", async (minutes) => {
+    const { mysteryTimeSchema } = await import("./mystery");
+    expect(mysteryTimeSchema.safeParse(minutes).success).toBe(true);
+    expect(validateMysteryRules({ total_minutes: minutes, ingredients: [ing("Eggs", "eggs")] }, listed, minutes)).toEqual([]);
+    expect(validateMysteryRules({ total_minutes: minutes + 1, ingredients: [] }, listed, minutes)).toHaveLength(1);
+  });
+
+  it.each([0, -1, 601, 120.5, NaN, Infinity, "180", null])("rejects invalid time %s", async (minutes) => {
+    const { mysteryTimeSchema } = await import("./mystery");
+    expect(mysteryTimeSchema.safeParse(minutes).success).toBe(false);
+  });
+});

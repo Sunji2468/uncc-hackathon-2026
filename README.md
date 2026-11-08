@@ -24,11 +24,13 @@ npm run dev                   # http://localhost:3000
 | `DATABASE_URL` | everything | The local default in `.env.example` matches `docker-compose.yml`. |
 | `OPENAI_API_KEY` | live AI | Not needed in demo mode. |
 | `OPENAI_MODEL` | live AI | Default `gpt-5.4-mini`. Use a larger model if dish identification is weak. |
+| `YOUTUBE_API_KEY` | recipe videos | Enable YouTube Data API v3 in Google Cloud and create an API key restricted to that API. Keep it server-side. |
 | `USDA_API_KEY` | USDA nutrition | Free at https://fdc.nal.usda.gov/api-key-signup. Without it, nutrition falls back to model estimates. |
 | `AI_DAILY_LIMIT` | cost guard | AI calls per user per day (default 40). |
 | `DEMO_MODE` | demos | `true` serves saved results for every AI feature. No keys needed. |
 | `APP_SECRET` | swaps, twists | Random string that signs server results (`openssl rand -hex 32`). |
 | `OPENAI_REASONING_EFFORT` | optional | `low`, `medium` and so on, for reasoning models. Unset by default. |
+| `SIGNUPS_PER_HOUR` | abuse guard | Sign-ups per IP per hour (default 10). Raise it only for automated test servers. |
 
 ### Demo mode
 
@@ -68,11 +70,12 @@ npm run test:e2e         # Playwright: full flow on phone and desktop, plus an a
 - **AI** (`src/lib/ai`): one OpenAI call per operation with Structured Outputs. Every answer is checked with zod plus rules (`src/lib/ai/retry.ts`). A bad answer is retried once with the problems spelled out, then fails with a friendly message.
 - **Safety nets:** a keyword-based diet and allergy guard (`src/lib/diet.ts`), the Mystery "only these ingredients" rule (`src/lib/mystery.ts`), and a USDA sanity check that falls back to the model's estimate when USDA disagrees by more than 2.5x (`src/lib/usda.ts`).
 - **Never trusting the browser:** meal macros, Fridge prices, swaps and twists are recomputed or verified on the server. Swaps and twists use signed tokens.
-- **No accounts:** an anonymous user identified by an httpOnly `th_uid` cookie.
+- **Accounts, with guest mode:** anyone can start as a guest (an httpOnly `th_uid` cookie). Signing up claims that guest, so nothing is lost. Logging in on a new device merges that browser's guest work into the account. Passwords are hashed with scrypt (`src/lib/password.ts`). Sessions are random tokens in an httpOnly `th_session` cookie, and only their SHA-256 is stored (`src/lib/auth.ts`). Log-in and sign-up are rate-limited, and every write API accepts only JSON as a CSRF guard.
+- **Landing page:** `/` is a three.js hero (React Three Fiber) of floating stickers, with one flipping between its photo and recipe sides. It loads lazily, falls back to a static collage without WebGL, and holds still for people who prefer reduced motion. The app itself lives at `/board`.
 
 ## 90-second demo script
 
-Set up beforehand: turn on demo mode (or set `DEMO_MODE=true`), set calorie and protein goals, and set your name under Goals and diet. Have the Board open.
+Set up beforehand: turn on demo mode (or set `DEMO_MODE=true`), sign up or log in, and set your calorie and protein goals. Open the landing page (`/`) for the intro, then click **Open your board**.
 
 | Time | Do | Say |
 |---|---|---|
@@ -90,3 +93,9 @@ Set up beforehand: turn on demo mode (or set `DEMO_MODE=true`), set calorie and 
 - Prices in `src/lib/prices.ts` are a placeholder table of USD per 100 g, labelled as estimates throughout.
 - The Fridge has no realtime connection. It refetches when the tab regains focus, plus a "Refresh now" button.
 - Design reference: `design/` holds the screens extracted from `TasteHeist.html`. `specs.md` is the build spec.
+
+### Mystery Box cooking time and videos
+
+The dial offers 15 min, 30 min, 1 hr, 2 hr, and Custom (1–600 whole minutes). The limit includes prep and cooking; the recipe may take less time.
+
+Mystery recipes show up to three related YouTube videos in embedded players, including when reopened from the board. Set `YOUTUBE_API_KEY` in `.env` and in your deployment environment, then restart/redeploy. Results are cached for 24 hours by recipe title. Missing configuration, unavailable YouTube results, and quota errors leave the recipe usable and show a video status message. Video recipes may use different ingredients or timings. Demo mode skips AI calls but video recommendations still require YouTube access.

@@ -81,7 +81,8 @@ Hard rules:
 - For each ingredient, from_list must be EXACTLY one of the user's ingredient strings above, or "pantry" for a staple.
 - Name each ingredient after the listed item it comes from (for example "Eggs" from "eggs").
 - You do not have to use every listed ingredient; choose what makes a good dish.
-- total_minutes must be at most ${timeLimitMin}. ${DIAL_GUIDANCE[timeLimitMin] ?? ""}
+- total_minutes must be at most ${timeLimitMin}. ${DIAL_GUIDANCE[timeLimitMin] ?? (timeLimitMin >= 120 ? "Long roasting, braising or slow cooking is welcome when appropriate for these ingredients." : "Choose a cooking method that fits the available time.")}
+- Include preparation, preheating, cooking and resting in total_minutes. The limit is a maximum, not a target; never stretch a recipe unnecessarily.
 - title: an appetizing dish name, at most 40 characters.
 - confidence reflects how good and realistic the dish is with only these ingredients.
 - assumptions: one short sentence (for example the portion you assumed).

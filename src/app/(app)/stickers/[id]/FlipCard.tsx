@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Pencil, Repeat } from "lucide-react";
 import type { StickerView } from "@/lib/sticker-view";
 import { formatCents } from "@/lib/money";
+import { FoodStickerArt } from "@/components/FoodStickerArt";
 import { PriceEditor } from "./PriceEditor";
 
 const faceBase =
@@ -35,15 +36,10 @@ export function FlipCard({
         >
           {/* Front: the photo side */}
           <div className={`${faceBase} bg-face text-sticker-ink`} aria-hidden={flipped}>
-            <div className="relative h-[260px] bg-butter">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={view.thumbnail} alt={`Photo of ${view.title}`} className="size-full object-cover" />
-              <p className="absolute top-4 left-4 rounded-full bg-sticker-ink px-3 py-1.5 text-[13px] font-bold text-face">
-                {kindLabel}
-              </p>
-            </div>
+            <FoodStickerArt thumbnail={view.thumbnail} title={view.title} kind={view.kind} savings={keepPerPlate} className="h-[280px]" />
             <div className="px-[22px] pt-[18px] pb-[22px]">
-              <h1 className="text-[38px] leading-[1.05] tracking-[-1.2px]">{view.title}</h1>
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-sticker-muted">{kindLabel}</p>
+              <h1 className="food-sticker-ribbon text-[38px] leading-[1.05] tracking-[-1.2px]">{view.title}</h1>
               {view.kind === "DISH" &&
                 (editingPrice ? (
                   <PriceEditor cents={view.menuPriceCents} onSave={onSavePrice} onDone={() => setEditingPrice(false)} />
@@ -103,7 +99,7 @@ export function FlipCard({
         className="mx-auto mt-5 flex min-h-12 items-center gap-2 rounded-full border-2 border-ink px-5 font-bold hover:bg-ink/10"
       >
         <Repeat size={18} aria-hidden="true" />
-        {flipped ? "Show the photo side" : "Flip to the recipe side"}
+        {flipped ? "Show the sticker side" : "Flip to the recipe side"}
       </button>
     </div>
   );

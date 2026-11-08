@@ -10,6 +10,7 @@ import { fetchJson } from "@/lib/client/fetch-json";
 import { FlipCard } from "./FlipCard";
 import { AddToDayButton } from "@/components/AddToDayButton";
 import { ShareToFridgeButton } from "@/components/ShareToFridgeButton";
+import { RecipeVideos } from "@/components/RecipeVideos";
 import { ShoppingList } from "./ShoppingList";
 import { ShareImageButton } from "./ShareImage";
 import { dietConflict } from "@/lib/diet";
@@ -67,7 +68,7 @@ export function StickerDetail({
 
   return (
     <>
-      <Link href="/" className="inline-flex min-h-11 items-center gap-2 text-[15px] font-bold text-muted hover:text-ink">
+      <Link href="/board" className="inline-flex min-h-11 items-center gap-2 text-[15px] font-bold text-muted hover:text-ink">
         <ArrowLeft size={18} aria-hidden="true" /> Back to the board
       </Link>
 
@@ -210,6 +211,8 @@ export function StickerDetail({
               ))}
             </ol>
           </section>
+
+          {view.kind === "MYSTERY" && <RecipeVideos key={view.id} stickerId={view.id} />}
 
           <p className="text-xs text-muted">
             Nutrition and costs are estimates. Calories and protein come from USDA FoodData Central where possible.

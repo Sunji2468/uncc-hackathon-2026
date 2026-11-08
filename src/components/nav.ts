@@ -8,7 +8,7 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { href: "/", label: "Board", short: "Board", icon: LayoutGrid },
+  { href: "/board", label: "Board", short: "Board", icon: LayoutGrid },
   { href: "/mystery", label: "Mystery Box", short: "Mystery", icon: Box },
   { href: "/macros", label: "Macro budget", short: "Macros", icon: BarChart3 },
   { href: "/fridge", label: "Community Fridge", short: "Fridge", icon: Users },
@@ -16,6 +16,6 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export function isActive(pathname: string, href: string): boolean {
-  if (href === "/") return pathname === "/" || pathname.startsWith("/stickers");
+  if (href === "/board") return pathname === "/board" || pathname.startsWith("/stickers");
   return pathname === href || pathname.startsWith(`${href}/`);
 }

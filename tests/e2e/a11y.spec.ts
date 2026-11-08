@@ -10,7 +10,7 @@ test("every screen passes an axe WCAG 2.1 AA scan", async ({ page }) => {
   const sticker = new URL(page.url()).pathname;
 
   const report: string[] = [];
-  for (const path of ["/", "/new", sticker, `${sticker}/cook`, "/mystery", "/macros", "/fridge", "/settings"]) {
+  for (const path of ["/", "/login", "/signup", "/board", "/new", sticker, `${sticker}/cook`, "/mystery", "/macros", "/fridge", "/settings"]) {
     await page.goto(path);
     await page.waitForLoadState("networkidle");
     const { violations } = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();

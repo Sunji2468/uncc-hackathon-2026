@@ -19,7 +19,7 @@ export function ErrorScreen({ error, reset }: { error: Error & { digest?: string
         <button type="button" onClick={reset} className="flex min-h-[52px] items-center gap-2 rounded-2xl bg-coral px-6 font-bold text-bg">
           <RotateCcw size={18} aria-hidden="true" /> Try again
         </button>
-        <Link href="/" className="flex min-h-[52px] items-center rounded-2xl border-2 border-ink px-6 font-bold">
+        <Link href="/board" className="flex min-h-[52px] items-center rounded-2xl border-2 border-ink px-6 font-bold">
           Back to the board
         </Link>
       </div>

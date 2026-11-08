@@ -36,11 +36,28 @@ model User {
   aiCallsDay   String   @default("")       // YYYY-MM-DD of the counter below
   aiCallsToday Int      @default(0)
 
+  // Account fields. All null for anonymous (guest) users; set on sign-up.
+  username     String?  @unique              // lowercase, 3-24 of a-z 0-9 _ .
+  email        String?  @unique              // lowercase
+  passwordHash String?                       // scrypt, see src/lib/password.ts
+
   stickers  Sticker[]
   meals     MealLog[]
   posts     FridgePost[]
   reactions Reaction[]
   notes     Note[]
+  sessions  Session[]
+}
+
+/// A signed-in browser. The cookie holds a random token; only its SHA-256 is stored.
+model Session {
+  id        String   @id // sha256(token), hex
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+
+  @@index([userId])
 }
 
 model Sticker {
@@ -51,7 +68,7 @@ model Sticker {
   title          String
   thumbnail      String      // data URL, JPEG, 400px wide, about 40 KB max
   menuPriceCents Int?        // DISH only: price of ONE plate
-  timeLimitMin   Int?        // MYSTERY only: 15, 30 or 60
+  timeLimitMin   Int?        // MYSTERY only: 1–600 minutes
   totalMinutes   Int
   servings       Int         @default(2) // the slider value, persisted
   confidence     Float       // 0..1

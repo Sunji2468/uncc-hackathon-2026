@@ -104,3 +104,27 @@
     transform: rotate(-3deg);
   }
 }
+
+/* Collectible food artwork; works without WebGL and preserves original photos. */
+.food-sticker-art { position: relative; isolation: isolate; overflow: hidden; min-height: 170px; background: #f6d96f; color: #20392e; }
+.food-sticker-mystery { background: #b9dec8; }
+.food-sticker-twist { background: #fac1b0; }
+.food-sticker-orbit { position: absolute; width: 75%; aspect-ratio: 1; border: 1px dashed currentColor; border-radius: 50%; opacity: .2; left: 12%; top: 9%; transform: rotate(-16deg); }
+.food-sticker-edition { position: absolute; z-index: 2; top: 12px; left: 14px; font-size: 9px; font-weight: 800; letter-spacing: .15em; }
+.food-sticker-subject { position: absolute; width: 70%; height: 72%; left: 15%; top: 14%; transform: rotate(-7deg); transition: transform .3s ease; }
+.food-sticker-subject img { width: 100%; height: 100%; }
+.food-sticker-subject.is-framed { padding: 6px; background: #fffdf2; border-radius: 43% 57% 61% 39% / 48% 40% 60% 52%; box-shadow: 0 9px 0 #20392e18, 0 14px 22px #20392e25; }
+.food-sticker-subject.is-framed img { object-fit: cover; border-radius: inherit; }
+.food-sticker-subject.is-cutout { filter: drop-shadow(4px 0 0 #fffdf2) drop-shadow(-4px 0 0 #fffdf2) drop-shadow(0 4px 0 #fffdf2) drop-shadow(0 -4px 0 #fffdf2) drop-shadow(0 10px 5px #20392e30); }
+.food-sticker-subject.is-cutout img { object-fit: contain; }
+.food-sticker-spark { position: absolute; font-size: 30px; }
+.food-sticker-spark-one { left: 7%; top: 32%; transform: rotate(-15deg); }
+.food-sticker-spark-two { right: 9%; top: 14%; font-size: 20px; }
+.food-sticker-caption { position: absolute; bottom: 9px; left: 14px; font-size: 10px; font-weight: 700; font-style: italic; }
+.food-sticker-stamp { position: absolute; right: 8px; bottom: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; height: 80px; color: #fffdf2; background: #20392e; border: 3px double #fffdf2; border-radius: 48% 52% 43% 57% / 53% 42% 58% 47%; transform: rotate(12deg); box-shadow: 0 3px 0 #20392e25; }
+.food-sticker-stamp span { font-size: 7px; font-weight: 800; letter-spacing: .06em; }
+.food-sticker-stamp strong { font-size: 18px; line-height: 1.4; }
+.food-sticker-emblem { position: absolute; inset: 22% 27%; display: grid; place-items: center; background: #fffdf2; border: 5px solid #fffdf2; border-radius: 42% 58% 46% 54%; box-shadow: 6px 8px 0 #20392e20; transform: rotate(-9deg); }
+.food-sticker-ribbon { position: relative; margin: -5px -4px 0; background: #20392e; color: #fffdf2; padding: 10px 14px; border-radius: 4px 14px 4px 14px; transform: rotate(-2deg); box-shadow: 0 3px 0 #20392e15; }
+@media (hover: hover) { a:hover .food-sticker-subject { transform: rotate(0) translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) { .food-sticker-subject { transition: none; } }

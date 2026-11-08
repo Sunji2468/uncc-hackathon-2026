@@ -13,6 +13,10 @@ export async function parseBody<S extends z.ZodType>(
   request: Request,
   schema: S,
 ): Promise<Parsed<z.infer<S>>> {
+  // JSON only: plain cross-site HTML forms cannot send this content type (CSRF guard).
+  if (!request.headers.get("content-type")?.toLowerCase().includes("application/json")) {
+    return { ok: false, response: apiError(415, "json_required", "Send the request as JSON.") };
+  }
   let raw: unknown;
   try {
     raw = await request.json();

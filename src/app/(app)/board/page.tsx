@@ -1,4 +1,4 @@
-import { getOrCreateUser } from "@/lib/user";
+import { accountOf, getOrCreateUser } from "@/lib/user";
 import { listStickerSummaries } from "@/lib/stickers";
 import { parseFilter } from "@/lib/sticker-summary";
 import { Board } from "./Board";
@@ -9,5 +9,5 @@ export default async function BoardPage({ searchParams }: { searchParams: Promis
   const { filter } = await searchParams;
   const user = await getOrCreateUser();
   const stickers = await listStickerSummaries(user.id);
-  return <Board initial={stickers} initialFilter={parseFilter(filter)} />;
+  return <Board initial={stickers} initialFilter={parseFilter(filter)} signedIn={accountOf(user) !== null} />;
 }

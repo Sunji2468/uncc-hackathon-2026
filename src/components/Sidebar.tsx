@@ -5,13 +5,14 @@ import { usePathname } from "next/navigation";
 import { Plus } from "lucide-react";
 import { LogoMark } from "./Logo";
 import { NAV_ITEMS, isActive } from "./nav";
+import { SidebarAccount, type Account } from "./AccountControls";
 
-export function Sidebar({ demo = false }: { demo?: boolean }) {
+export function Sidebar({ demo = false, account }: { demo?: boolean; account: Account | null }) {
   const pathname = usePathname();
   return (
     <aside className="hidden w-[272px] shrink-0 flex-col gap-6 border-r-2 border-line bg-sidebar px-5 py-6 md:flex">
       <div className="sticky top-6 flex min-h-[calc(100dvh-48px)] flex-col gap-6">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/board" className="flex items-center gap-3">
           <LogoMark />
           <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">TasteHeist</span>
         </Link>
@@ -43,7 +44,8 @@ export function Sidebar({ demo = false }: { demo?: boolean }) {
           })}
         </nav>
 
-        <div className="mt-auto flex flex-col gap-2">
+        <div className="mt-auto flex flex-col gap-3">
+          <SidebarAccount account={account} />
           {demo && (
             <Link href="/settings" className="self-start rounded-full bg-butter px-3 py-1 text-xs font-bold text-bg">
               Demo mode on

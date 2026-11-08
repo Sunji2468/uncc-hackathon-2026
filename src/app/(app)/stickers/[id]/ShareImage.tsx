@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { ImageDown, LoaderCircle } from "lucide-react";
 import { toBlob } from "html-to-image";
 import type { StickerView } from "@/lib/sticker-view";
+import { FoodStickerArt } from "@/components/FoodStickerArt";
 import { formatCents } from "@/lib/money";
 
 function slug(s: string) {
@@ -109,8 +110,7 @@ function ShareCard({ view, ref }: { view: StickerView; ref: React.Ref<HTMLDivEle
         className="absolute top-24 left-[70px] w-[340px] overflow-hidden rounded-[34px] border-8 border-white bg-face text-sticker-ink"
         style={{ transform: "rotate(-3deg)", boxShadow: "0 20px 40px rgba(18,32,27,0.3)" }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={view.thumbnail} alt="" className="h-[170px] w-full object-cover" />
+        <FoodStickerArt thumbnail={view.thumbnail} title={view.title} kind={view.kind} className="h-[170px]" />
         <div className="px-5 pt-4 pb-5">
           <p className="font-display text-[32px] leading-[1.05] font-extrabold tracking-[-1px]">{view.title}</p>
           <div className="mt-3 flex items-center gap-3">

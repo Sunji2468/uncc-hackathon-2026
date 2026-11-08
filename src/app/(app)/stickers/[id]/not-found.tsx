@@ -7,9 +7,9 @@ export default function StickerNotFound() {
       <SearchX size={44} className="text-butter" aria-hidden="true" />
       <h1 className="text-3xl tracking-[-0.8px]">Sticker not found</h1>
       <p className="text-muted">
-        It may have been deleted, or it belongs to a different browser. Stickers are saved per browser.
+        It may have been deleted, or it belongs to another account. Log in to see your stickers on any device.
       </p>
-      <Link href="/" className="mt-2 flex min-h-[52px] items-center rounded-2xl bg-coral px-6 font-bold text-bg">
+      <Link href="/board" className="mt-2 flex min-h-[52px] items-center rounded-2xl bg-coral px-6 font-bold text-bg">
         Back to the board
       </Link>
     </div>

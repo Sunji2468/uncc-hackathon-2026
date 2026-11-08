@@ -6,7 +6,7 @@ import { getOrCreateUser } from "@/lib/user";
 import { settingsFromUser } from "@/lib/settings";
 import { thumbnailSchema } from "@/lib/images";
 import { plateThumbnail } from "@/lib/plate";
-import { MAX_MYSTERY_ITEMS, TIME_LIMITS, normalizeItems } from "@/lib/mystery";
+import { MAX_MYSTERY_ITEMS, mysteryTimeSchema, normalizeItems } from "@/lib/mystery";
 import { createSticker } from "@/lib/stickers";
 import { mysteryRecipe } from "@/lib/ai/mystery";
 import { consumeAiCall } from "@/lib/ai/limit";
@@ -18,7 +18,7 @@ export const maxDuration = 60;
 
 const bodySchema = z.object({
   ingredients: z.array(z.string().trim().min(1).max(40)).min(1).max(MAX_MYSTERY_ITEMS),
-  timeLimitMin: z.union(TIME_LIMITS.map((t) => z.literal(t)) as [z.ZodLiteral<15>, z.ZodLiteral<30>, z.ZodLiteral<60>]),
+  timeLimitMin: mysteryTimeSchema,
   /** Optional: you can type ingredients without a photo. */
   thumbnail: thumbnailSchema.optional(),
   /** A draft Mystery sticker from this session to replace (when the dial is turned). */

@@ -4,18 +4,29 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Camera, SlidersHorizontal } from "lucide-react";
 import { LogoMark } from "./Logo";
+import { Avatar, type Account } from "./AccountControls";
 import { NAV_ITEMS, isActive } from "./nav";
 
 /** Phone layout: a slim top bar plus a bottom tab bar with a center camera button. */
-export function MobileTopBar() {
+export function MobileTopBar({ account }: { account: Account | null }) {
   const pathname = usePathname();
   const onSettings = isActive(pathname, "/settings");
   return (
     <header className="flex items-center justify-between px-4 pt-4 md:hidden">
-      <Link href="/" className="flex items-center gap-2.5">
+      <Link href="/board" className="flex items-center gap-2.5">
         <LogoMark size={36} />
         <span className="font-display text-xl font-extrabold tracking-[-0.5px]">TasteHeist</span>
       </Link>
+      <div className="flex items-center gap-2">
+      {account ? (
+        <Link href="/settings#account" aria-label={`Account: ${account.name}`} className="rounded-full">
+          <Avatar name={account.name} size={44} />
+        </Link>
+      ) : (
+        <Link href="/login" className="flex min-h-11 items-center rounded-full bg-butter px-4 text-sm font-bold text-bg">
+          Log in
+        </Link>
+      )}
       <Link
         href="/settings"
         aria-label="Goals and diet settings"
@@ -26,6 +37,7 @@ export function MobileTopBar() {
       >
         <SlidersHorizontal size={22} aria-hidden="true" />
       </Link>
+      </div>
     </header>
   );
 }

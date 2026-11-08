@@ -218,7 +218,7 @@ export function Fridge({ initial, initialSort, myName }: { initial: FridgePostVi
             <div className="dotted-board flex min-h-[320px] flex-col items-center justify-center gap-3 rounded-[32px] border-2 border-line p-8 text-center">
               <p className="font-display text-2xl font-extrabold">The Fridge is empty</p>
               <p className="max-w-sm text-muted">Open one of your restaurant heists and press Share to Fridge.</p>
-              <Link href="/" className="mt-2 flex min-h-12 items-center rounded-2xl bg-coral px-6 font-bold text-bg">
+              <Link href="/board" className="mt-2 flex min-h-12 items-center rounded-2xl bg-coral px-6 font-bold text-bg">
                 Go to your board
               </Link>
             </div>

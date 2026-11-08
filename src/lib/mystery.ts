@@ -1,7 +1,16 @@
+import { z } from "zod";
 import { isWater } from "./prices";
 
-export const TIME_LIMITS = [15, 30, 60] as const;
-export type TimeLimit = (typeof TIME_LIMITS)[number];
+export const TIME_LIMITS = [15, 30, 60, 120] as const;
+export type TimeLimit = number;
+export const MAX_MYSTERY_MINUTES = 600;
+export const mysteryTimeSchema = z.number().int().min(1).max(MAX_MYSTERY_MINUTES);
+
+export function formatTimeLimit(minutes: number): string {
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  return hours ? `${hours} hr${rest ? ` ${rest} min` : ""}` : `${minutes} min`;
+}
 
 export const MAX_MYSTERY_ITEMS = 20;
 export const PANTRY_SOURCE = "pantry";

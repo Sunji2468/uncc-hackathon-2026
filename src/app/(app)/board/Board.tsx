@@ -16,7 +16,7 @@ const FILTERS: { id: BoardFilter; label: string }[] = [
   { id: "mystery", label: "Mystery Boxes" },
 ];
 
-export function Board({ initial, initialFilter }: { initial: StickerSummary[]; initialFilter: BoardFilter }) {
+export function Board({ initial, initialFilter, signedIn }: { initial: StickerSummary[]; initialFilter: BoardFilter; signedIn: boolean }) {
   const [stickers, setStickers] = useState(initial);
   const [filter, setFilter] = useState<BoardFilter>(initialFilter);
   const [confirmId, setConfirmId] = useState<string | null>(null);
@@ -52,7 +52,7 @@ export function Board({ initial, initialFilter }: { initial: StickerSummary[]; i
     <>
       <PageHeader
         title="Your board"
-        subtitle={count === 0 ? "Nothing here yet." : `${count} ${count === 1 ? "sticker" : "stickers"}, saved in this browser.`}
+        subtitle={count === 0 ? "Nothing here yet." : `${count} ${count === 1 ? "sticker" : "stickers"}, ${signedIn ? "saved to your account" : "saved in this browser"}.`}
       >
         <div role="group" aria-label="Filter stickers" className="flex flex-wrap gap-2">
           {FILTERS.map((f) => (
