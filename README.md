@@ -1,4 +1,4 @@
-# TasteHeist
+# Bytehacks
 
 Photograph a restaurant dish and it becomes a sticker: what it costs to cook at home versus the menu price, estimated calories and protein, and a recipe. **Mystery Box** turns a photo of your counter into a recipe that uses only those ingredients. A **macro budget** suggests a meal sized to what is left of your day, and the **Community Fridge** lets people react to each other's dishes.
 
@@ -79,14 +79,14 @@ Set up beforehand: turn on demo mode (or set `DEMO_MODE=true`), sign up or log i
 
 | Time | Do | Say |
 |---|---|---|
-| 0:00 | Board | "This $25 plate of cacio e pepe costs about $1.70 to make at home. TasteHeist turns any restaurant dish into a sticker that tells you that." |
+| 0:00 | Board | "This $25 plate of cacio e pepe costs about $1.70 to make at home. Bytehacks turns any restaurant dish into a sticker that tells you that." |
 | 0:10 | **New sticker**, then **Smash burger** | "Snap a dish, or use a sample. The AI only names the dish and estimates the portion. The numbers come from USDA data." The card waits, then flips. |
 | 0:25 | Drag the **Servings** slider to 4 | "Cooking for four? Amounts, cost and 'you keep' update instantly. Each number shows a range, because these are estimates." |
 | 0:35 | Edit an ingredient, then **Suggest swaps** | "Too much cheese? Edit it, or swap it, and see what each swap saves in dollars and calories." |
 | 0:45 | **Mystery Box**: add eggs, cooked rice and tomatoes, then **Open the box** | "Photo of your counter, a time limit, and a recipe that uses only what you have. The server rejects any ingredient you didn't list." |
 | 0:60 | **Macro budget**: press **Eat**, then **Size a meal for me** | "Log what you ate, and it sizes dinner to exactly what's left, rescaled server-side to hit the target." |
 | 0:75 | Sticker page: **Share to Fridge**, then react on the Fridge | "Share the heist. Friends react with stickers and leave notes." |
-| 0:85 | **Start cooking** | "And cook it, one step at a time, with timers. That's TasteHeist." |
+| 0:85 | **Start cooking** | "And cook it, one step at a time, with timers. That's Bytehacks." |
 
 ## Notes
 

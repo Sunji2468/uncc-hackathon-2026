@@ -208,7 +208,7 @@ export function AuthForm({ mode, next, hasGuestData }: { mode: Mode; next: strin
       </form>
 
       <p className="mt-6 text-center text-[15px] text-muted">
-        {mode === "signup" ? "Already have an account? " : "New to TasteHeist? "}
+        {mode === "signup" ? "Already have an account? " : "New to Bytehacks? "}
         <Link
           href={`${mode === "signup" ? "/login" : "/signup"}${next !== "/board" ? `?next=${encodeURIComponent(next)}` : ""}`}
           className="font-bold text-butter underline-offset-4 hover:underline"

@@ -15,7 +15,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "TasteHeist",
+  title: "Bytehacks",
   description: "Turn a restaurant plate into a recipe, macros and the money you keep cooking it at home.",
 };
 

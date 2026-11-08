@@ -14,7 +14,7 @@ export function Sidebar({ demo = false, account }: { demo?: boolean; account: Ac
       <div className="sticky top-6 flex min-h-[calc(100dvh-48px)] flex-col gap-6">
         <Link href="/board" className="flex items-center gap-3">
           <LogoMark />
-          <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">TasteHeist</span>
+          <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">Bytehacks</span>
         </Link>
 
         <Link

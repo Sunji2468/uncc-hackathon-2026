@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-/** The full TasteHeist flow, end to end, on a fresh anonymous user. */
+/** The full Bytehacks flow, end to end, on a fresh anonymous user. */
 test("main flow: sample dish, sticker, mystery, macros, twist, fridge, cook", async ({ page, isMobile }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(`${new URL(page.url()).pathname}: ${e.message}`));

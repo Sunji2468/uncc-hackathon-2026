@@ -15,7 +15,7 @@ export function MobileTopBar({ account }: { account: Account | null }) {
     <header className="flex items-center justify-between px-4 pt-4 md:hidden">
       <Link href="/board" className="flex items-center gap-2.5">
         <LogoMark size={36} />
-        <span className="font-display text-xl font-extrabold tracking-[-0.5px]">TasteHeist</span>
+        <span className="font-display text-xl font-extrabold tracking-[-0.5px]">Bytehacks</span>
       </Link>
       <div className="flex items-center gap-2">
       {account ? (

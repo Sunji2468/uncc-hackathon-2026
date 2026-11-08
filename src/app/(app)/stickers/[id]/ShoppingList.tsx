@@ -63,7 +63,7 @@ export function ShoppingList({ view, units }: { view: StickerView; units: Units 
       `${view.title}, serves ${view.servings}`,
       ...groups.flatMap((g) => [``, `${g.label}:`, ...g.items.map((i) => `- ${i.name}, ${formatAmount(i.grams, i.name, units)}`)]),
       ``,
-      `Estimated total ${formatCents(total)} (TasteHeist estimate)`,
+      `Estimated total ${formatCents(total)} (Bytehacks estimate)`,
     ].join("\n");
 
   const copy = async () => {

@@ -7,8 +7,8 @@ import { accountOf, getOrCreateUser } from "@/lib/user";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
-  title: "TasteHeist · Love it? Make it.",
-  description: "Snap any dish you loved. TasteHeist turns it into a recipe you can cook, with real nutrition and what it costs at home.",
+  title: "Bytehacks · Love it? Make it.",
+  description: "Snap any dish you loved. Bytehacks turns it into a recipe you can cook, with real nutrition and what it costs at home.",
 };
 
 export default async function Landing() {
@@ -21,7 +21,7 @@ export default async function Landing() {
         <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 py-3 md:px-8">
           <Link href="/" className="flex items-center gap-3">
             <LogoMark size={38} />
-            <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">TasteHeist</span>
+            <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">Bytehacks</span>
           </Link>
           <nav aria-label="Landing" className="hidden items-center gap-1 md:flex">
             <a href="#how" className="rounded-full px-4 py-2.5 font-bold text-muted hover:text-ink">How it works</a>
@@ -223,7 +223,7 @@ export default async function Landing() {
       <footer className="border-t-2 border-line px-4 py-10 md:px-8">
         <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 text-sm text-muted">
           <span className="flex items-center gap-2">
-            <LogoMark size={28} /> <span className="font-display font-extrabold text-ink">TasteHeist</span> · UNCC Hackathon 2026
+            <LogoMark size={28} /> <span className="font-display font-extrabold text-ink">Bytehacks</span> · UNCC Hackathon 2026
           </span>
           <span>Nutrition and costs are estimates. Nutrition data: USDA FoodData Central.</span>
         </div>

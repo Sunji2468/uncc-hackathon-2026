@@ -8,7 +8,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       <main className="flex min-w-0 flex-1 flex-col px-5 py-6 md:px-12 md:py-8">
         <Link href="/" className="flex items-center gap-3 self-start">
           <LogoMark />
-          <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">TasteHeist</span>
+          <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">Bytehacks</span>
         </Link>
         <div className="mx-auto flex w-full max-w-[440px] flex-1 flex-col justify-center py-10">{children}</div>
         <p className="text-center text-[13px] text-muted">Nutrition and costs are estimates.</p>

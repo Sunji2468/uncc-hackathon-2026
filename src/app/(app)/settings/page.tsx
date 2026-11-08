@@ -46,7 +46,7 @@ export default async function SettingsPage() {
           <>
             <div>
               <h2 id="account-h" className="text-2xl tracking-[-0.5px]">
-                You are using TasteHeist as a guest
+                You are using Bytehacks as a guest
               </h2>
               <p className="mt-1 text-sm text-muted">
                 Your board is saved in this browser only. Create an account to keep it on any device; everything you have made comes with you.

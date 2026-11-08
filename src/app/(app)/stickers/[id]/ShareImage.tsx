@@ -22,7 +22,7 @@ export function ShareImageButton({ view }: { view: StickerView }) {
     try {
       const blob = await toBlob(cardRef.current, { pixelRatio: 2, cacheBust: true, width: 480, height: 600 });
       if (!blob) throw new Error("empty image");
-      const file = new File([blob], `tasteheist-${slug(view.title)}.png`, { type: "image/png" });
+      const file = new File([blob], `bytehacks-${slug(view.title)}.png`, { type: "image/png" });
 
       if (typeof navigator.canShare === "function" && navigator.canShare({ files: [file] })) {
         try {
@@ -103,7 +103,7 @@ function ShareCard({ view, ref }: { view: StickerView; ref: React.Ref<HTMLDivEle
             <circle cx="12" cy="12" r="4.5" />
           </svg>
         </span>
-        <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">TasteHeist</span>
+        <span className="font-display text-2xl font-extrabold tracking-[-0.5px]">Bytehacks</span>
       </div>
 
       <div

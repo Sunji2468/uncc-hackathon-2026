@@ -7,7 +7,7 @@ import { safeNext } from "@/lib/auth-schemas";
 import { AuthForm } from "../AuthForm";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Log in · TasteHeist" };
+export const metadata: Metadata = { title: "Log in · Bytehacks" };
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   const next = safeNext((await searchParams).next);
